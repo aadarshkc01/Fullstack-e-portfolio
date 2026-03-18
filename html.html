@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="HTML — document structure, core tags, output demonstrations, and the Job Application Form." />
+  <title>HTML | ePortfolio — Aadarsh K.C.</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <header class="site-header page-header">
+    <a class="header-brand" href="index.html">Aadarsh K.C.<span>CET138 Full Stack Development</span></a>
+    <button class="nav-toggle" aria-label="Toggle navigation"
+      aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="fullstack.html">Full Stack</a>
+      <a href="html.html" class="active">HTML</a>
+      <a href="css.html">CSS</a>
+      <a href="bootstrap.html">Bootstrap</a>
+      <a href="javascript.html">JavaScript</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-banner">
+      <div class="container">
+        <div
+          style="display:inline-block;background:rgba(255,255,255,0.13);border:1px solid rgba(255,255,255,0.26);color:#fff;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;padding:0.24rem 0.78rem;border-radius:100px;margin-bottom:0.85rem;">
+          Section 2 of 5</div>
+        <h1>HTML — HyperText Markup Language</h1>
+        <p>Document structure, core tags with output demonstrations, and the Job Application Form skeleton.</p>
+      </div>
+    </section>
+
+    <div class="container" style="padding-top:3rem;padding-bottom:4rem;">
+
+      <!-- 1. WHAT IS HTML -->
+      <div class="tier-divider">
+        <div class="tier-number">1</div>
+        <h2 class="tier-title">What is HTML?</h2>
+        <div class="tier-divider-line"></div>
+      </div>
+
+      <div style="text-align:center;margin-bottom:1.5rem;">
+        <img src="./images/htmlLogo.png" alt="HTML5 official logo"
+          style="max-width:15rem;height:auto;display:inline-block;" />
+        <p style="font-size:1rem;color:var(--text-muted);margin-top:0.4rem;"><em>Image source: <a
+              href="https://toppng.com/show_download/472767/html5-logo-abstract-backgrounds" target="_blank"
+              rel="noopener noreferrer">toppng</a></em></p>
+      </div>
+
+      <p>HyperText Markup Language (HTML) is the standard language used to define the structure and content of web
+        pages. It organises content into a hierarchy of <em>elements</em>, each identified by an opening tag such as
+        <code>&lt;h1&gt;</code> and a corresponding closing tag <code>&lt;/h1&gt;</code>. Void elements such as
+        <code>&lt;img&gt;</code> and <code>&lt;input&gt;</code> are self-closing and carry no content between tags.
+      </p>
+
+      <div class="info-box">
+        <h4>HTML is not a programming language</h4>
+        <p style="margin:0;">HTML contains no conditional logic, loops, or computational operations. Its sole purpose is
+          to construct the <strong>Document Object Model (DOM)</strong> — a hierarchical tree of nodes that the browser
+          renders as a visual page. CSS subsequently applies style rules to those nodes, and JavaScript reads and
+          manipulates them at runtime.</p>
+      </div>
+
+      <p>HTML5, maintained as a living standard by the WHATWG, introduced a set of <em>semantic elements</em> —
+        including <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>,
+        <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>, and <code>&lt;footer&gt;</code> — that communicate
+        the <em>meaning</em> of content, not merely its appearance. Semantic markup improves accessibility for assistive
+        technologies, aids search-engine indexing, and makes codebases significantly easier to maintain.
+      </p>
+
+      <!-- 2. BASIC STRUCTURE -->
+      <div class="tier-divider">
+        <div class="tier-number">2</div>
+        <h2 class="tier-title">Basic HTML Structure</h2>
+        <div class="tier-divider-line"></div>
+      </div>
+
+      <p>Every valid HTML5 document requires four components. Each has a distinct, mandatory purpose:</p>
+
+      <div class="code-block">
+        <div class="code-block-header">
+          <div class="code-dots"><span></span><span></span><span></span></div><span
+            class="code-filename">boilerplate.html</span>
+        </div>
+        <pre><code><span class="cm">&lt;!-- DOCTYPE: not an HTML tag — a processing instruction.
+     Tells the browser to render using HTML5 standards mode.
+     Without it, browsers may fall back to "quirks mode". --&gt;</span>
+<span class="kw">&lt;!DOCTYPE html&gt;</span>
+
+<span class="cm">&lt;!-- lang="en" identifies the page language for screen readers. --&gt;</span>
+<span class="tg">&lt;html</span> <span class="at">lang</span>=<span class="st">"en"</span><span class="tg">&gt;</span>
+
+<span class="tg">&lt;head&gt;</span>
+  <span class="tg">&lt;meta</span> <span class="at">charset</span>=<span class="st">"UTF-8"</span> <span class="tg">/&gt;</span>
+  <span class="tg">&lt;meta</span> <span class="at">name</span>=<span class="st">"viewport"</span> <span class="at">content</span>=<span class="st">"width=device-width, initial-scale=1.0"</span> <span class="tg">/&gt;</span>
+  <span class="tg">&lt;title&gt;</span>My Page<span class="tg">&lt;/title&gt;</span>
+  <span class="tg">&lt;link</span> <span class="at">rel</span>=<span class="st">"stylesheet"</span> <span class="at">href</span>=<span class="st">"style.css"</span> <span class="tg">/&gt;</span>
+<span class="tg">&lt;/head&gt;</span>
+
+<span class="tg">&lt;body&gt;</span>
+  <span class="tg">&lt;h1&gt;</span>Hello, World!<span class="tg">&lt;/h1&gt;</span>
+  <span class="tg">&lt;script</span> <span class="at">src</span>=<span class="st">"script.js"</span><span class="tg">&gt;&lt;/script&gt;</span>
+<span class="tg">&lt;/body&gt;</span>
+<span class="tg">&lt;/html&gt;</span></code></pre>
+      </div>
+
+      <!-- 3. IMPORTANT TAGS -->
+      <div class="tier-divider" style="margin-top:3rem;">
+        <div class="tier-number">3</div>
+        <h2 class="tier-title">Important HTML Tags</h2>
+        <div class="tier-divider-line"></div>
+      </div>
+
+      <p>Each example below shows the HTML markup followed directly by how a browser renders it using only the built-in
+        default stylesheet — no custom CSS applied.</p>
+
+      <table class="catalog-table" style="margin-bottom:2.5rem;">
+        <thead>
+          <tr>
+            <th style="width:14%;">Tag</th>
+            <th style="width:11%;">Category</th>
+            <th>Purpose</th>
+            <th style="width:30%;">Key attributes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>&lt;h1&gt;–&lt;h6&gt;</code></td>
+            <td>Block</td>
+            <td>Heading hierarchy. One <code>&lt;h1&gt;</code> per page; screen readers and search engines use this
+              hierarchy.</td>
+            <td>Global: <code>id</code>, <code>class</code>, <code>lang</code></td>
+          </tr>
+          <tr>
+            <td><code>&lt;p&gt;</code></td>
+            <td>Block</td>
+            <td>Paragraph of body text. Browser adds default margin between paragraphs.</td>
+            <td><code>id</code>, <code>class</code>, <code>style</code></td>
+          </tr>
+          <tr>
+            <td><code>&lt;strong&gt;</code>, <code>&lt;em&gt;</code></td>
+            <td>Inline</td>
+            <td><code>&lt;strong&gt;</code> = strong importance (bold). <code>&lt;em&gt;</code> = stress emphasis
+              (italic). Both are semantic; distinct from <code>&lt;b&gt;</code> and <code>&lt;i&gt;</code>.</td>
+            <td><code>id</code>, <code>class</code></td>
+          </tr>
+          <tr>
+            <td><code>&lt;fieldset&gt;</code></td>
+            <td>Block</td>
+            <td>Groups related form controls visually and semantically. Renders a border around the group. Used with
+              <code>&lt;legend&gt;</code>.</td>
+            <td><code>name</code>, <code>disabled</code> (disables all child controls)</td>
+          </tr>
+          <tr>
+            <td><code>&lt;legend&gt;</code></td>
+            <td>Block</td>
+            <td>Caption for a <code>&lt;fieldset&gt;</code> group. Screen readers announce it before each control inside
+              the fieldset.</td>
+            <td><code>id</code>, <code>class</code></td>
+          </tr>
+          <tr>
+            <td><code>&lt;datalist&gt;</code></td>
+            <td>Block</td>
+            <td>Provides a predefined list of suggestions for an <code>&lt;input&gt;</code>. The user can still type
+              freely; the list is advisory only.</td>
+            <td><code>id</code> (must match <code>list</code> on the input)</td>
+          </tr>
+          <tr>
+            <td><code>&lt;optgroup&gt;</code></td>
+            <td>Inline</td>
+            <td>Groups <code>&lt;option&gt;</code> elements inside a <code>&lt;select&gt;</code> with a labelled
+              separator. Improves scanability of long drop-downs.</td>
+            <td><code>label</code> (group heading text), <code>disabled</code></td>
+          </tr>
+          <tr>
+            <td><code>&lt;a&gt;</code></td>
+            <td>Inline</td>
+            <td>Hyperlink to a URL, email, tel, or anchor. Without <code>href</code> acts as a placeholder.</td>
+            <td><code>href</code>, <code>target</code>, <code>rel</code>, <code>download</code></td>
+          </tr>
+          <tr>
+            <td><code>&lt;img&gt;</code></td>
+            <td>Void</td>
+            <td>Embeds an image. The <code>alt</code> attribute is mandatory for accessibility and as fallback text.
+            </td>
+            <td><code>src</code>, <code>alt</code> (required), <code>width</code>, <code>height</code>,
+              <code>loading="lazy"</code></td>
+          </tr>
+          <tr>
+            <td><code>&lt;table&gt;</code>, <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code></td>
+            <td>Block</td>
+            <td>Represents tabular data. Must not be used for page layout. <code>&lt;thead&gt;</code> groups header
+              rows; <code>&lt;tbody&gt;</code> groups data rows.</td>
+            <td><code>id</code>, <code>class</code>; <code>&lt;th scope="col|row"&gt;</code></td>
+          </tr>
+          <tr>
+            <td><code>&lt;form&gt;</code></td>
+            <td>Block</td>
+            <td>Container for interactive controls. <code>action</code> and <code>method</code> determine where and how
+              data is sent.</td>
+            <td><code>action</code>, <code>method</code>, <code>novalidate</code>, <code>enctype</code></td>
+          </tr>
+          <tr>
+            <td><code>&lt;input&gt;</code></td>
+            <td>Void</td>
+            <td>Versatile void element that renders different controls based on <code>type</code>. The most common
+              element on the web.</td>
+            <td><code>type</code>, <code>id</code>, <code>name</code>, <code>placeholder</code>, <code>required</code>,
+              <code>pattern</code>, <code>list</code>, <code>aria-describedby</code></td>
+          </tr>
+          <tr>
+            <td><code>&lt;select&gt;</code></td>
+            <td>Inline</td>
+            <td>Drop-down menu of <code>&lt;option&gt;</code> elements. Can be grouped with
+              <code>&lt;optgroup&gt;</code>.</td>
+            <td><code>id</code>, <code>name</code>, <code>required</code>, <code>multiple</code></td>
+          </tr>
+          <tr>
+            <td><code>&lt;textarea&gt;</code></td>
+            <td>Inline</td>
+            <td>Multi-line text input for longer free-form content. Has an opening and closing tag unlike
+              <code>&lt;input&gt;</code>.</td>
+            <td><code>rows</code>, <code>cols</code>, <code>placeholder</code>, <code>required</code>,
+              <code>maxlength</code></td>
+          </tr>
+          <tr>
+            <td><code>&lt;button&gt;</code></td>
+            <td>Inline</td>
+            <td>Clickable button. <code>type="submit"</code> sends the form; <code>type="button"</code> requires a JS
+              listener.</td>
+            <td><code>type</code>, <code>disabled</code>, <code>form</code></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Tag demos -->
+      <div class="ex-block">
+        <div class="ex-title">Headings — h1 through h6</div>
+        <div class="ex-code">
+          <pre><code><span class="tg">&lt;h1&gt;</span>Heading Level 1 — Page Title<span class="tg">&lt;/h1&gt;</span>
+<span class="tg">&lt;h2&gt;</span>Heading Level 2 — Section Title<span class="tg">&lt;/h2&gt;</span>
+<span class="tg">&lt;h3&gt;</span>Heading Level 3 — Subsection<span class="tg">&lt;/h3&gt;</span>
+<span class="tg">&lt;h4&gt;</span>Heading Level 4<span class="tg">&lt;/h4&gt;</span>
+<span class="tg">&lt;h5&gt;</span>Heading Level 5<span class="tg">&lt;/h5&gt;</span>
+<span class="tg">&lt;h6&gt;</span>Heading Level 6<span class="tg">&lt;/h6&gt;</span></code></pre>
+        </div>
+        <div class="ex-output">
+          <div class="ex-output-title">Output</div>
+          <div class="ex-output-body">
+            <div class="raw-out">
+              <h1>Heading Level 1 — Page Title</h1>
+              <h2>Heading Level 2 — Section Title</h2>
+              <h3>Heading Level 3 — Subsection</h3>
+              <h4>Heading Level 4</h4>
+              <h5>Heading Level 5</h5>
+              <h6>Heading Level 6</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ex-block">
+        <div class="ex-title">Paragraphs and inline text — p, strong, em, mark, small</div>
+        <div class="ex-code">
+          <pre><code><span class="tg">&lt;p&gt;</span>A standard paragraph of body text.<span class="tg">&lt;/p&gt;</span>
+
+<span class="tg">&lt;p&gt;</span>
+  Full stack development requires knowledge of
+  <span class="tg">&lt;strong&gt;</span>frontend<span class="tg">&lt;/strong&gt;</span>, <span class="tg">&lt;em&gt;</span>backend<span class="tg">&lt;/em&gt;</span>,
+  and the <span class="tg">&lt;mark&gt;</span>database layer<span class="tg">&lt;/mark&gt;</span>.
+<span class="tg">&lt;/p&gt;</span>
+
+<span class="tg">&lt;p&gt;</span><span class="tg">&lt;small&gt;</span>All fields marked * are required.<span class="tg">&lt;/small&gt;</span><span class="tg">&lt;/p&gt;</span></code></pre>
+        </div>
+        <div class="ex-output">
+          <div class="ex-output-title">Output</div>
+          <div class="ex-output-body">
+            <div class="raw-out">
+              <p>A standard paragraph of body text.</p>
+              <p>Full stack development requires knowledge of <strong>frontend</strong>, <em>backend</em>, and the
+                <mark>database layer</mark>.</p>
+              <p><small>All fields marked * are required.</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ex-block">
+        <div class="ex-title">Lists — ul, ol, and nested li</div>
+        <div class="ex-code">
+          <pre><code><span class="tg">&lt;ul&gt;</span>
+  <span class="tg">&lt;li&gt;</span>HTML — document structure<span class="tg">&lt;/li&gt;</span>
+  <span class="tg">&lt;li&gt;</span>CSS — visual presentation<span class="tg">&lt;/li&gt;</span>
+  <span class="tg">&lt;li&gt;</span>JavaScript — interactive behaviour<span class="tg">&lt;/li&gt;</span>
+<span class="tg">&lt;/ul&gt;</span>
+
+<span class="tg">&lt;ol&gt;</span>
+  <span class="tg">&lt;li&gt;</span>Complete the application form<span class="tg">&lt;/li&gt;</span>
+  <span class="tg">&lt;li&gt;</span>Review all entries for accuracy<span class="tg">&lt;/li&gt;</span>
+  <span class="tg">&lt;li&gt;</span>Submit and await confirmation<span class="tg">&lt;/li&gt;</span>
+<span class="tg">&lt;/ol&gt;</span></code></pre>
+        </div>
+        <div class="ex-output">
+          <div class="ex-output-title">Output</div>
+          <div class="ex-output-body">
+            <div class="raw-out">
+              <ul>
+                <li>HTML — document structure</li>
+                <li>CSS — visual presentation</li>
+                <li>JavaScript — interactive behaviour</li>
+              </ul>
+              <ol>
+                <li>Complete the application form</li>
+                <li>Review all entries for accuracy</li>
+                <li>Submit and await confirmation</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ex-block">
+        <div class="ex-title">fieldset, legend, and datalist — grouping and suggestions</div>
+        <div class="ex-code">
+          <pre><code><span class="cm">&lt;!-- fieldset groups related inputs; legend labels the group.
+     Screen readers announce the legend before each child control. --&gt;</span>
+<span class="tg">&lt;fieldset&gt;</span>
+  <span class="tg">&lt;legend&gt;</span>Contact Information<span class="tg">&lt;/legend&gt;</span>
+
+  <span class="tg">&lt;label</span> <span class="at">for</span>=<span class="st">"city"</span><span class="tg">&gt;</span>City<span class="tg">&lt;/label&gt;</span>
+  <span class="cm">&lt;!-- list="cities" connects the input to a datalist by ID --&gt;</span>
+  <span class="tg">&lt;input</span> <span class="at">type</span>=<span class="st">"text"</span> <span class="at">id</span>=<span class="st">"city"</span> <span class="at">name</span>=<span class="st">"city"</span>
+         <span class="at">placeholder</span>=<span class="st">"e.g. Kathmandu"</span>
+         <span class="at">list</span>=<span class="st">"cities"</span> <span class="tg">/&gt;</span>
+
+  <span class="cm">&lt;!-- datalist: advisory suggestions; user can still type freely --&gt;</span>
+  <span class="tg">&lt;datalist</span> <span class="at">id</span>=<span class="st">"cities"</span><span class="tg">&gt;</span>
+    <span class="tg">&lt;option</span> <span class="at">value</span>=<span class="st">"Kathmandu"</span><span class="tg">&gt;</span>
+    <span class="tg">&lt;option</span> <span class="at">value</span>=<span class="st">"Pokhara"</span><span class="tg">&gt;</span>
+    <span class="tg">&lt;option</span> <span class="at">value</span>=<span class="st">"Lalitpur"</span><span class="tg">&gt;</span>
+    <span class="tg">&lt;option</span> <span class="at">value</span>=<span class="st">"Nepalgunj"</span><span class="tg">&gt;</span>
+    <span class="tg">&lt;option</span> <span class="at">value</span>=<span class="st">"Bharatpur"</span><span class="tg">&gt;</span>
+  <span class="tg">&lt;/datalist&gt;</span>
+<span class="tg">&lt;/fieldset&gt;</span></code></pre>
+        </div>
+        <div class="ex-output">
+          <div class="ex-output-title">Output</div>
+          <div class="ex-output-body">
+            <div class="raw-out">
+              <fieldset>
+                <legend>Contact Information</legend>
+                <label for="demo-city">City</label><br />
+                <input type="text" id="demo-city" name="city" placeholder="e.g. Kathmandu" list="demo-cities" />
+                <datalist id="demo-cities">
+                  <option value="Kathmandu">
+                  <option value="Pokhara">
+                  <option value="Lalitpur">
+                  <option value="Nepalgunj">
+                  <option value="Bharatpur">
+                </datalist>
+              </fieldset>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ex-block">
+        <div class="ex-title">optgroup inside select — grouped drop-down options</div>
+        <div class="ex-code">
+          <pre><code><span class="cm">&lt;!-- optgroup adds a labelled separator to group options.
+     Particularly useful for long lists with logical categories. --&gt;</span>
+<span class="tg">&lt;label</span> <span class="at">for</span>=<span class="st">"province"</span><span class="tg">&gt;</span>Province<span class="tg">&lt;/label&gt;</span>
+<span class="tg">&lt;select</span> <span class="at">id</span>=<span class="st">"province"</span> <span class="at">name</span>=<span class="st">"province"</span><span class="tg">&gt;</span>
+  <span class="tg">&lt;option</span> <span class="at">value</span>=<span class="st">""</span><span class="tg">&gt;</span>-- Select Province --<span class="tg">&lt;/option&gt;</span>
+
+  <span class="tg">&lt;optgroup</span> <span class="at">label</span>=<span class="st">"Hilly Provinces"</span><span class="tg">&gt;</span>
+    <span class="tg">&lt;option</span> <span class="at">value</span>=<span class="st">"koshi"</span><span class="tg">&gt;</span>Koshi Province<span class="tg">&lt;/option&gt;</span>
+    <span class="tg">&lt;option</span> <span class="at">value</span>=<span class="st">"gandaki"</span><span class="tg">&gt;</span>Gandaki Province<span class="tg">&lt;/option&gt;</span>
+  <span class="tg">&lt;/optgroup&gt;</span>
+
+  <span class="tg">&lt;optgroup</span> <span class="at">label</span>=<span class="st">"Terai Provinces"</span><span class="tg">&gt;</span>
+    <span class="tg">&lt;option</span> <span class="at">value</span>=<span class="st">"madhesh"</span><span class="tg">&gt;</span>Madhesh Province<span class="tg">&lt;/option&gt;</span>
+    <span class="tg">&lt;option</span> <span class="at">value</span>=<span class="st">"lumbini"</span><span class="tg">&gt;</span>Lumbini Province<span class="tg">&lt;/option&gt;</span>
+  <span class="tg">&lt;/optgroup&gt;</span>
+<span class="tg">&lt;/select&gt;</span></code></pre>
+        </div>
+        <div class="ex-output">
+          <div class="ex-output-title">Output</div>
+          <div class="ex-output-body">
+            <div class="raw-out">
+              <label for="demo-prov">Province</label><br />
+              <select id="demo-prov">
+                <option value="">-- Select Province --</option>
+                <optgroup label="Hilly Provinces">
+                  <option value="koshi">Koshi Province</option>
+                  <option value="gandaki">Gandaki Province</option>
+                </optgroup>
+                <optgroup label="Terai Provinces">
+                  <option value="madhesh">Madhesh Province</option>
+                  <option value="lumbini">Lumbini Province</option>
+                </optgroup>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. FORM EXAMPLE — Stage 1 -->
+      <div class="tier-divider" style="margin-top:3rem;">
+        <div class="tier-number">4</div>
+        <h2 class="tier-title">Job Application Form — Stage 1: Raw HTML</h2>
+        <div class="tier-divider-line"></div>
+      </div>
+
+      <p>This is <strong>Stage 1</strong> of a four-stage progression. The same form will be enhanced with CSS styling
+        (Stage 2), Bootstrap layout (Stage 3), and JavaScript validation (Stage 4) in the sections that follow.
+        Here it is rendered with the browser's default stylesheet only — demonstrating that HTML defines
+        <em>structure and meaning</em>, not appearance.
+      </p>
+
+      <p>This version uses <code>&lt;fieldset&gt;</code> and <code>&lt;legend&gt;</code> to group related fields,
+        <code>&lt;datalist&gt;</code> for city suggestions, <code>&lt;optgroup&gt;</code> to group roles,
+        and <code>aria-describedby</code> / <code>aria-required</code> for full accessibility.
+      </p>
+
+      <div class="ex-block">
+        <div class="ex-title">job-application-form.html — plain HTML, no CSS applied</div>
+        <div class="ex-code">
+          <pre><code><span class="tg">&lt;!DOCTYPE html&gt;</span>
+<span class="tg">&lt;html</span> <span class="at">lang</span>=<span class="st">"en"</span><span class="tg">&gt;</span>
+<span class="tg">&lt;head&gt;</span>
+  <span class="tg">&lt;meta</span> <span class="at">charset</span>=<span class="st">"UTF-8"</span> <span class="tg">/&gt;</span>
+  <span class="tg">&lt;meta</span> <span class="at">name</span>=<span class="st">"viewport"</span> <span class="at">content</span>=<span class="st">"width=device-width, initial-scale=1.0"</span> <span class="tg">/&gt;</span>
+  <span class="tg">&lt;title&gt;</span>Job Application — TechJobs Nepal<span class="tg">&lt;/title&gt;</span>
+<span class="tg">&lt;/head&gt;</span>
+<span class="tg">&lt;body&gt;</span>
+
+  <span class="tg">&lt;h1&gt;</span>Job Application Form<span class="tg">&lt;/h1&gt;</span>
+  <span class="tg">&lt;p&gt;</span>TechJobs Nepal — Apply for a developer position below.<span class="tg">&lt;/p&gt;</span>
+  <span class="tg">&lt;p&gt;&lt;small&gt;</span>Fields marked * are required.<span class="tg">&lt;/small&gt;&lt;/p&gt;</span>
+
+  <span class="tg">&lt;form</span> <span class="at">action</span>=<span class="st">"/submit-application"</span> <span class="at">method</span>=<span class="st">"post"</span> <span class="at">novalidate</span><span class="tg">&gt;</span>
+
+    <span class="cm">&lt;!-- fieldset groups personal information fields semantically --&gt;</span>
+    <span class="tg">&lt;fieldset&gt;</span>
+      <span class="tg">&lt;legend&gt;</span>Personal Information<span class="tg">&lt;/legend&gt;</span>
+
+      <span class="tg">&lt;label</span> <span class="at">for</span>=<span class="st">"fullName"</span><span class="tg">&gt;</span>Full Name *<span class="tg">&lt;/label&gt;&lt;br /&gt;</span>
+      <span class="tg">&lt;input</span> <span class="at">type</span>=<span class="st">"text"</span> <span class="at">id</span>=<span class="st">"fullName"</span> <span class="at">name</span>=<span class="st">"fullName"</span>
+             <span class="at">placeholder</span>=<span class="st">"e.g. Aadarsh K.C."</span>
+             <span class="at">required</span> <span class="at">aria-required</span>=<span class="st">"true"</span>
+             <span class="at">aria-describedby</span>=<span class="st">"fullNameError"</span> <span class="tg">/&gt;&lt;br /&gt;&lt;br /&gt;</span>
+
+      <span class="tg">&lt;label</span> <span class="at">for</span>=<span class="st">"email"</span><span class="tg">&gt;</span>Email Address *<span class="tg">&lt;/label&gt;&lt;br /&gt;</span>
+      <span class="tg">&lt;input</span> <span class="at">type</span>=<span class="st">"email"</span> <span class="at">id</span>=<span class="st">"email"</span> <span class="at">name</span>=<span class="st">"email"</span>
+             <span class="at">placeholder</span>=<span class="st">"aadarsh@example.com.np"</span>
+             <span class="at">required</span> <span class="at">aria-required</span>=<span class="st">"true"</span>
+             <span class="at">aria-describedby</span>=<span class="st">"emailError"</span> <span class="tg">/&gt;&lt;br /&gt;&lt;br /&gt;</span>
+
+      <span class="cm">&lt;!-- type="tel" shows numeric keypad on mobile devices --&gt;</span>
+      <span class="tg">&lt;label</span> <span class="at">for</span>=<span class="st">"phone"</span><span class="tg">&gt;</span>Phone Number (optional)<span class="tg">&lt;/label&gt;&lt;br /&gt;</span>
+      <span class="tg">&lt;input</span> <span class="at">type</span>=<span class="st">"tel"</span> <span class="at">id</span>=<span class="st">"phone"</span> <span class="at">name</span>=<span class="st">"phone"</span>
+             <span class="at">placeholder</span>=<span class="st">"+9779802864772"</span>
+             <span class="at">pattern</span>=<span class="st">"[+\d\s\-()]{7,15}"</span> <span class="tg">/&gt;&lt;br /&gt;&lt;br /&gt;</span>
+
+      <span class="cm">&lt;!-- datalist provides Nepali city suggestions --&gt;</span>
+      <span class="tg">&lt;label</span> <span class="at">for</span>=<span class="st">"city"</span><span class="tg">&gt;</span>City *<span class="tg">&lt;/label&gt;&lt;br /&gt;</span>
+      <span class="tg">&lt;input</span> <span class="at">type</span>=<span class="st">"text"</span> <span class="at">id</span>=<span class="st">"city"</span> <span class="at">name</span>=<span class="st">"city"</span>
+             <span class="at">placeholder</span>=<span class="st">"e.g. Kathmandu"</span>
+             <span class="at">list</span>=<span class="st">"cityList"</span> <span class="at">required</span> <span class="tg">/&gt;</span>
+      <span class="tg">&lt;datalist</span> <span class="at">id</span>=<span class="st">"cityList"</span><span class="tg">&gt;</span>
+        <span class="tg">&lt;option</span> <span class="at">value</span>=<span class="st">"Kathmandu"</span><span class="tg">&gt;&lt;option</span> <span class="at">value</span>=<span class="st">"Pokhara"</span><span class="tg">&gt;</span>
+        <span class="tg">&lt;option</span> <span class="at">value</span>=<span class="st">"Lalitpur"</span><span class="tg">&gt;&lt;option</span> <span class="at">value</span>=<span class="st">"Nepalgunj"</span><span class="tg">&gt;</span>
+        <span class="tg">&lt;option</span> <span class="at">value</span>=<span class="st">"Bharatpur"</span><span class="tg">&gt;</span>
+      <span class="tg">&lt;/datalist&gt;&lt;br /&gt;&lt;br /&gt;</span>
+    <span class="tg">&lt;/fieldset&gt;</span>
+
+    <span class="tg">&lt;br /&gt;</span>
+
+    <span class="cm">&lt;!-- Second fieldset groups application-specific fields --&gt;</span>
+    <span class="tg">&lt;fieldset&gt;</span>
+      <span class="tg">&lt;legend&gt;</span>Application Details<span class="tg">&lt;/legend&gt;</span>
+
+      <span class="cm">&lt;!-- optgroup groups job roles by category --&gt;</span>
+      <span class="tg">&lt;label</span> <span class="at">for</span>=<span class="st">"position"</span><span class="tg">&gt;</span>Position Applied For *<span class="tg">&lt;/label&gt;&lt;br /&gt;</span>
+      <span class="tg">&lt;select</span> <span class="at">id</span>=<span class="st">"position"</span> <span class="at">name</span>=<span class="st">"position"</span> <span class="at">required</span><span class="tg">&gt;</span>
+        <span class="tg">&lt;option</span> <span class="at">value</span>=<span class="st">""</span><span class="tg">&gt;</span>-- Please select --<span class="tg">&lt;/option&gt;</span>
+        <span class="tg">&lt;optgroup</span> <span class="at">label</span>=<span class="st">"Frontend"</span><span class="tg">&gt;</span>
+          <span class="tg">&lt;option</span> <span class="at">value</span>=<span class="st">"frontend"</span><span class="tg">&gt;</span>Frontend Developer<span class="tg">&lt;/option&gt;</span>
+          <span class="tg">&lt;option</span> <span class="at">value</span>=<span class="st">"ui"</span><span class="tg">&gt;</span>UI Engineer<span class="tg">&lt;/option&gt;</span>
+        <span class="tg">&lt;/optgroup&gt;</span>
+        <span class="tg">&lt;optgroup</span> <span class="at">label</span>=<span class="st">"Backend"</span><span class="tg">&gt;</span>
+          <span class="tg">&lt;option</span> <span class="at">value</span>=<span class="st">"backend"</span><span class="tg">&gt;</span>Backend Developer<span class="tg">&lt;/option&gt;</span>
+          <span class="tg">&lt;option</span> <span class="at">value</span>=<span class="st">"devops"</span><span class="tg">&gt;</span>DevOps Engineer<span class="tg">&lt;/option&gt;</span>
+        <span class="tg">&lt;/optgroup&gt;</span>
+        <span class="tg">&lt;optgroup</span> <span class="at">label</span>=<span class="st">"Full Stack"</span><span class="tg">&gt;</span>
+          <span class="tg">&lt;option</span> <span class="at">value</span>=<span class="st">"fullstack"</span><span class="tg">&gt;</span>Full Stack Developer<span class="tg">&lt;/option&gt;</span>
+        <span class="tg">&lt;/optgroup&gt;</span>
+      <span class="tg">&lt;/select&gt;&lt;br /&gt;&lt;br /&gt;</span>
+
+      <span class="tg">&lt;label</span> <span class="at">for</span>=<span class="st">"experience"</span><span class="tg">&gt;</span>Years of Experience *<span class="tg">&lt;/label&gt;&lt;br /&gt;</span>
+      <span class="tg">&lt;input</span> <span class="at">type</span>=<span class="st">"number"</span> <span class="at">id</span>=<span class="st">"experience"</span> <span class="at">name</span>=<span class="st">"experience"</span>
+             <span class="at">min</span>=<span class="st">"0"</span> <span class="at">max</span>=<span class="st">"30"</span> <span class="at">placeholder</span>=<span class="st">"e.g. 2"</span> <span class="at">required</span> <span class="tg">/&gt;&lt;br /&gt;&lt;br /&gt;</span>
+
+      <span class="tg">&lt;label</span> <span class="at">for</span>=<span class="st">"portfolio"</span><span class="tg">&gt;</span>Portfolio URL<span class="tg">&lt;/label&gt;&lt;br /&gt;</span>
+      <span class="tg">&lt;input</span> <span class="at">type</span>=<span class="st">"url"</span> <span class="at">id</span>=<span class="st">"portfolio"</span> <span class="at">name</span>=<span class="st">"portfolio"</span>
+             <span class="at">placeholder</span>=<span class="st">"https://github.com/aadarshkc"</span> <span class="tg">/&gt;&lt;br /&gt;&lt;br /&gt;</span>
+
+      <span class="tg">&lt;label</span> <span class="at">for</span>=<span class="st">"message"</span><span class="tg">&gt;</span>Cover Note * (min. 20 characters)<span class="tg">&lt;/label&gt;&lt;br /&gt;</span>
+      <span class="tg">&lt;textarea</span> <span class="at">id</span>=<span class="st">"message"</span> <span class="at">name</span>=<span class="st">"message"</span>
+                <span class="at">rows</span>=<span class="st">"5"</span> <span class="at">cols</span>=<span class="st">"45"</span>
+                <span class="at">placeholder</span>=<span class="st">"Briefly describe your skills and experience..."</span>
+                <span class="at">required</span> <span class="at">minlength</span>=<span class="st">"20"</span><span class="tg">&gt;&lt;/textarea&gt;&lt;br /&gt;&lt;br /&gt;</span>
+    <span class="tg">&lt;/fieldset&gt;</span>
+
+    <span class="tg">&lt;br /&gt;</span>
+    <span class="tg">&lt;button</span> <span class="at">type</span>=<span class="st">"submit"</span><span class="tg">&gt;</span>Submit Application<span class="tg">&lt;/button&gt;</span>
+
+  <span class="tg">&lt;/form&gt;</span>
+<span class="tg">&lt;/body&gt;</span>
+<span class="tg">&lt;/html&gt;</span></code></pre>
+        </div>
+
+        <div class="ex-output">
+          <div class="ex-output-title">Output — Stage 1: Raw HTML, browser defaults only</div>
+          <div class="ex-output-body">
+            <div class="raw-out">
+              <h1>Job Application Form</h1>
+              <p>TechJobs Nepal — Apply for a developer position below.</p>
+              <p><small>Fields marked * are required.</small></p>
+
+              <fieldset>
+                <legend>Personal Information</legend>
+                <label for="h-name">Full Name *</label><br />
+                <input type="text" id="h-name" placeholder="e.g. Aadarsh K.C." /><br /><br />
+                <label for="h-email">Email Address *</label><br />
+                <input type="email" id="h-email" placeholder="aadarsh@example.com.np" /><br /><br />
+                <label for="h-phone">Phone Number (optional)</label><br />
+                <input type="tel" id="h-phone" placeholder="+9779802864772" /><br /><br />
+                <label for="h-city">City *</label><br />
+                <input type="text" id="h-city" placeholder="e.g. Kathmandu" list="h-cities" />
+                <datalist id="h-cities">
+                  <option value="Kathmandu">
+                  <option value="Pokhara">
+                  <option value="Lalitpur">
+                  <option value="Nepalgunj">
+                  <option value="Bharatpur">
+                </datalist>
+              </fieldset>
+              <br />
+              <fieldset>
+                <legend>Application Details</legend>
+                <label for="h-pos">Position Applied For *</label><br />
+                <select id="h-pos">
+                  <option value="">-- Please select --</option>
+                  <optgroup label="Frontend">
+                    <option value="frontend">Frontend Developer</option>
+                    <option value="ui">UI Engineer</option>
+                  </optgroup>
+                  <optgroup label="Backend">
+                    <option value="backend">Backend Developer</option>
+                    <option value="devops">DevOps Engineer</option>
+                  </optgroup>
+                  <optgroup label="Full Stack">
+                    <option value="fullstack">Full Stack Developer</option>
+                  </optgroup>
+                </select><br /><br />
+                <label for="h-exp">Years of Experience *</label><br />
+                <input type="number" id="h-exp" min="0" max="30" placeholder="e.g. 2" /><br /><br />
+                <label for="h-port">Portfolio URL</label><br />
+                <input type="url" id="h-port" placeholder="https://github.com/aadarshkc" /><br /><br />
+                <label for="h-msg">Cover Note * (min. 20 characters)</label><br />
+                <textarea id="h-msg" rows="5" cols="45"
+                  placeholder="Briefly describe your skills and experience..."></textarea>
+              </fieldset>
+              <br />
+              <button type="button">Submit Application</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tip-box">
+        The output above uses only the browser's built-in default stylesheet — Arial typeface, inset input borders, and
+        the standard grey button. Notice that <code>&lt;fieldset&gt;</code> renders a visible border around each group.
+        This is <strong>Stage 1</strong> of the form's progression. The CSS section applies a complete custom design
+        layer to this same markup without changing any HTML.
+      </div>
+
+      <div
+        style="background:var(--navy-pale);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem 1.85rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;margin-top:2rem;">
+        <div>
+          <p style="margin:0;font-weight:600;color:var(--navy);">Next: CSS</p>
+          <p style="margin:0;font-size:0.87rem;color:var(--text-muted);">Applying colour, spacing, Flexbox layout, and
+            responsive design to the same form — Stage 2.</p>
+        </div>
+        <a href="css.html" class="btn btn-primary">CSS Section</a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h5>Sitemap</h5><a href="index.html">Home</a><a href="fullstack.html">Full Stack</a><a
+          href="html.html">HTML</a><a href="css.html">CSS</a><a href="bootstrap.html">Bootstrap</a><a
+          href="javascript.html">JavaScript</a>
+      </div>
+      <div class="footer-col">
+        <h5>Student</h5>
+        <p><strong>Aadarsh K.C.</strong></p>
+        <p>Canvas ID: bj02zu</p>
+        <p>Reg No: 240832810</p>
+        <p>BSc (Hons) Information Technology</p>
+      </div>
+      <div class="footer-col">
+        <h5>Assignment</h5>
+        <p><strong>CET138 Full Stack Development</strong></p>
+        <p>Individual ePortfolio Assessment</p>
+        <p>Academic Year 2025–26 · Semester 3</p>
+        <p style="margin-top:0.5rem;font-size:0.76rem;color:rgba(255,255,255,0.32);">&copy; 2026 Aadarsh K.C. All rights
+          reserved.</p>
+      </div>
+    </div>
+    <div class="footer-bottom"><span>Built with HTML, CSS, Bootstrap 5 and Vanilla JavaScript</span><span>CET138
+        ePortfolio — Aadarsh K.C.</span></div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

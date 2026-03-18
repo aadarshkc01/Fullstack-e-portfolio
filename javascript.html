@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="JavaScript — variables, functions, events, form validation, interactive examples, and code walkthrough." />
+  <title>JavaScript | ePortfolio — Aadarsh K.C.</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <header class="site-header page-header">
+    <a class="header-brand" href="index.html">Aadarsh K.C.<span>CET138 Full Stack Development</span></a>
+    <button class="nav-toggle" aria-label="Toggle navigation"
+      aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="fullstack.html">Full Stack</a>
+      <a href="html.html">HTML</a>
+      <a href="css.html">CSS</a>
+      <a href="bootstrap.html">Bootstrap</a>
+      <a href="javascript.html" class="active">JavaScript</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-banner">
+      <div class="container">
+        <div
+          style="display:inline-block;background:rgba(255,255,255,0.13);border:1px solid rgba(255,255,255,0.26);color:#fff;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;padding:0.24rem 0.78rem;border-radius:100px;margin-bottom:0.85rem;">
+          Section 5 of 5</div>
+        <h1>JavaScript — The Behavioural Layer</h1>
+        <p>Variables, functions, events, form validation, interactive examples, and a code walkthrough.</p>
+      </div>
+    </section>
+
+    <div class="container" style="padding-top:3rem;padding-bottom:4rem;">
+
+      <!-- 1. WHAT IS JAVASCRIPT -->
+      <div class="tier-divider">
+        <div class="tier-number">1</div>
+        <h2 class="tier-title">What is JavaScript?</h2>
+        <div class="tier-divider-line"></div>
+      </div>
+
+      <div>
+        <div style="text-align:center;margin-bottom:1rem;">
+          <img src="./images/javascript-logo.png" alt="javascript logo"
+            style="max-width: 15rem; height: auto; margin: 0 auto;">
+          <i>Image source: <a href="https://www.freepnglogos.com/pics/javascript" target="_blank">freepnglogos</a></i>
+        </div> <br>
+      </div>
+
+      <p>JavaScript is a high-level, interpreted, dynamically typed programming language governed by the
+        <strong>ECMAScript (ES)</strong> standard, maintained by ECMA International. It is the only programming language
+        natively supported by all major web browsers, making it the universal language of client-side web development.
+      </p>
+
+      <div class="info-box">
+        <h4>The three-layer model</h4>
+        <p style="margin:0;">JavaScript completes the three-layer model of the frontend alongside HTML and CSS. HTML
+          defines the <em>structure</em> of a document; CSS defines its <em>appearance</em>; JavaScript defines its
+          <em>behaviour</em> — how elements respond to user interactions, how data is fetched from a server, and how the
+          DOM is updated without a full page reload. This separation of concerns is the foundation of modern web
+          development practice.
+        </p>
+      </div>
+
+      <p>Modern JavaScript refers to <strong>ECMAScript 2015 (ES6) and later</strong>. ES6 introduced significant
+        improvements: block-scoped variable declarations with <code>let</code> and <code>const</code>, arrow functions,
+        template literals, destructuring, the class syntax, and native Promises for asynchronous programming. All
+        examples in this portfolio use ES6+ syntax.</p>
+
+      <!-- 2. BASIC CONCEPTS -->
+      <div class="tier-divider" style="margin-top:3rem;">
+        <div class="tier-number">2</div>
+        <h2 class="tier-title">Basic JavaScript Concepts — Variables, Functions, and Events</h2>
+        <div class="tier-divider-line"></div>
+      </div>
+
+      <div class="ex-block">
+        <div class="ex-title">Variables — const, let, and primitive data types</div>
+        <div class="ex-code">
+          <pre><code><span class="cm">// const: block-scoped; the binding cannot be reassigned.
+// Use for values that should not change after declaration.</span>
+<span class="kw">const</span> studentName = <span class="st">"Aadarsh K.C."</span>;   <span class="cm">// String</span>
+<span class="kw">const</span> moduleCode   = <span class="st">"CET138"</span>;
+<span class="kw">const</span> creditHours  = <span class="nm">20</span>;               <span class="cm">// Number</span>
+<span class="kw">const</span> isEnrolled   = <span class="kw">true</span>;             <span class="cm">// Boolean</span>
+
+<span class="cm">// let: block-scoped; the binding can be reassigned.</span>
+<span class="kw">let</span> errorCount = <span class="nm">0</span>;
+errorCount = errorCount + <span class="nm">1</span>; <span class="cm">// now 1</span>
+
+<span class="cm">// undefined: declared but not yet assigned a value.</span>
+<span class="kw">let</span> grade;
+console.<span class="fn">log</span>(grade); <span class="cm">// undefined</span>
+
+<span class="cm">// null: intentionally assigned to indicate "no value".</span>
+<span class="kw">const</span> result = <span class="kw">null</span>;
+
+<span class="cm">// typeof: returns the data type as a string.</span>
+console.<span class="fn">log</span>(<span class="kw">typeof</span> studentName); <span class="cm">// "string"</span>
+console.<span class="fn">log</span>(<span class="kw">typeof</span> creditHours);  <span class="cm">// "number"</span>
+console.<span class="fn">log</span>(<span class="kw">typeof</span> isEnrolled);   <span class="cm">// "boolean"</span></code></pre>
+        </div>
+        <div class="ex-output">
+          <div class="ex-output-title">Output</div>
+          <div class="ex-output-body">
+            <button class="btn btn-primary" type="button" style="font-size:0.82rem;" onclick="
+        const out = document.getElementById('ae-vars');
+        const data = [
+          ['typeof &quot;Aadarsh K.C.&quot;', typeof 'Aadarsh K.C.'],
+          ['typeof 20', typeof 20],
+          ['typeof true', typeof true],
+          ['typeof undefined', typeof undefined],
+          ['typeof null', typeof null]
+        ];
+        out.innerHTML = data.map(d => d[0] + '  →  <strong>' + d[1] + '</strong>').join('<br/>');
+        out.style.display = 'block';
+      ">Run in console</button>
+            <div id="ae-vars"
+              style="display:none;margin-top:0.75rem;background:#0f1e30;color:#cdd9e5;padding:0.85rem 1.1rem;border-radius:6px;font-family:var(--font-mono);font-size:0.79rem;line-height:1.7;">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ex-block">
+        <div class="ex-title">Functions — declaration, arrow function, and conditional logic</div>
+        <div class="ex-code">
+          <pre><code><span class="cm">// Traditional function declaration — hoisted to the top of its scope,
+// meaning it can be called before the line it is defined on.</span>
+<span class="kw">function</span> <span class="fn">greet</span>(name) {
+  <span class="kw">return</span> <span class="st">`Welcome, ${name}. Module: CET138.`</span>; <span class="cm">// template literal</span>
+}
+
+<span class="cm">// Arrow function (ES6) — concise syntax; no own 'this' binding.
+// Suitable for callbacks and short utility functions.</span>
+<span class="kw">const</span> square = (n) =&gt; n * n;
+
+<span class="cm">// Multi-line arrow function with conditional logic</span>
+<span class="kw">const</span> getGrade = (score) =&gt; {
+  <span class="kw">if</span>      (score &gt;= <span class="nm">70</span>) <span class="kw">return</span> <span class="st">"Distinction"</span>;
+  <span class="kw">else if</span> (score &gt;= <span class="nm">50</span>) <span class="kw">return</span> <span class="st">"Pass"</span>;
+  <span class="kw">else</span>                   <span class="kw">return</span> <span class="st">"Fail"</span>;
+};
+
+console.<span class="fn">log</span>(<span class="fn">greet</span>(<span class="st">"Aadarsh"</span>)); <span class="cm">// "Welcome, Aadarsh. Module: CET138."</span>
+console.<span class="fn">log</span>(<span class="fn">square</span>(<span class="nm">7</span>));         <span class="cm">// 49</span>
+console.<span class="fn">log</span>(<span class="fn">getGrade</span>(<span class="nm">82</span>));       <span class="cm">// "Distinction"</span>
+console.<span class="fn">log</span>(<span class="fn">getGrade</span>(<span class="nm">55</span>));       <span class="cm">// "Pass"</span>
+console.<span class="fn">log</span>(<span class="fn">getGrade</span>(<span class="nm">38</span>));       <span class="cm">// "Fail"</span></code></pre>
+        </div>
+        <div class="ex-output">
+          <div class="ex-output-title">Output</div>
+          <div class="ex-output-body">
+            <button class="btn btn-primary" type="button" style="font-size:0.82rem;" onclick="
+        function greet(name) { return 'Welcome, ' + name + '. Module: CET138.'; }
+        const square = (n) => n * n;
+        const getGrade = (s) => s >= 70 ? 'Distinction' : s >= 50 ? 'Pass' : 'Fail';
+        const out = document.getElementById('ae-fns');
+        out.innerHTML = [
+          'greet(&quot;Aadarsh&quot;) → <strong>' + greet('Aadarsh') + '</strong>',
+          'square(7)         → <strong>' + square(7) + '</strong>',
+          'getGrade(82)      → <strong>' + getGrade(82) + '</strong>',
+          'getGrade(55)      → <strong>' + getGrade(55) + '</strong>',
+          'getGrade(38)      → <strong>' + getGrade(38) + '</strong>'
+        ].join('<br/>');
+        out.style.display='block';
+      ">Run in console</button>
+            <div id="ae-fns"
+              style="display:none;margin-top:0.75rem;background:#0f1e30;color:#cdd9e5;padding:0.85rem 1.1rem;border-radius:6px;font-family:var(--font-mono);font-size:0.79rem;line-height:1.7;">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ex-block">
+        <div class="ex-title">Events — addEventListener, click, and input</div>
+        <div class="ex-code">
+          <pre><code><span class="cm">// addEventListener(eventType, callback) attaches a handler function
+// that executes each time the specified event fires on the element.</span>
+
+<span class="cm">// 'click' fires once per mouse click or keyboard activation</span>
+<span class="kw">const</span> btn = document.<span class="fn">getElementById</span>(<span class="st">'submitBtn'</span>);
+
+btn.<span class="fn">addEventListener</span>(<span class="st">'click'</span>, <span class="kw">function</span> (event) {
+  <span class="cm">// event.preventDefault() stops the browser's default action.
+  // For a button inside a form, that action is page submission.</span>
+  event.<span class="fn">preventDefault</span>();
+  console.<span class="fn">log</span>(<span class="st">'Button activated.'</span>);
+});
+
+<span class="cm">// 'input' fires synchronously on every value change (each keystroke)</span>
+<span class="kw">const</span> nameField = document.<span class="fn">getElementById</span>(<span class="st">'fullName'</span>);
+
+nameField.<span class="fn">addEventListener</span>(<span class="st">'input'</span>, <span class="kw">function</span> () {
+  console.<span class="fn">log</span>(<span class="st">'Current value: '</span> + <span class="kw">this</span>.value);
+});</code></pre>
+        </div>
+        <div class="ex-output">
+          <div class="ex-output-title">Output</div>
+          <div class="ex-output-body">
+            <div style="margin-bottom:0.75rem;">
+              <button class="btn btn-primary" type="button" style="font-size:0.83rem;" onclick="
+          const d = document.getElementById('ae-clickCount');
+          const n = parseInt(d.dataset.n || 0) + 1;
+          d.dataset.n = n;
+          d.textContent = 'click event fired ' + n + ' time' + (n === 1 ? '' : 's');
+        ">Click to fire event</button>
+              <span id="ae-clickCount"
+                style="margin-left:0.75rem;font-size:0.85rem;font-family:var(--font-mono);color:var(--navy);"
+                data-n="0">click event fired 0 times</span>
+            </div>
+            <div>
+              <label
+                style="display:block;font-size:0.82rem;font-weight:600;color:var(--navy);margin-bottom:0.28rem;">Type
+                to fire the input event:</label>
+              <input type="text" placeholder="Start typing..."
+                style="width:100%;padding:0.44rem 0.72rem;border:1.5px solid var(--border);border-radius:5px;font-size:0.85rem;"
+                oninput="document.getElementById('ae-inputOut').textContent = 'Current value: &quot;' + this.value + '&quot; (' + this.value.length + ' chars)';" />
+              <p id="ae-inputOut"
+                style="margin:0.35rem 0 0;font-size:0.79rem;font-family:var(--font-mono);color:var(--navy);min-height:1.2em;">
+                Current value: "" (0 chars)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. FORM VALIDATION -->
+      <div class="tier-divider" style="margin-top:3rem;">
+        <div class="tier-number">3</div>
+        <h2 class="tier-title">Job Application Form — Stage 4: JavaScript Validation</h2>
+        <div class="tier-divider-line"></div>
+      </div>
+
+      <p>This is <strong>Stage 4</strong> — the final stage of the form's progression. The HTML structure from Stage 1,
+        the CSS styling from Stage 2, and the Bootstrap layout from Stage 3 are all retained. JavaScript is now layered
+        on top to intercept the submit event, validate each field, and inject error messages directly into the DOM — all
+        without any page reload.</p>
+
+      <p>Below is the complete source code used to power the form validation, followed by the live interactive output.
+      </p>
+
+      <!-- SOURCE CODE for the JS validation form -->
+      <div class="ex-block">
+        <div class="ex-title">script.js — client-side validation for the Job Application Form</div>
+        <div class="ex-code">
+          <pre><code><span class="cm">/* ── Helper functions ────────────────────────────────────── */</span>
+
+<span class="kw">function</span> <span class="fn">showError</span>(fieldId, message) {
+  <span class="kw">const</span> field = document.<span class="fn">getElementById</span>(fieldId);
+  <span class="kw">const</span> err   = document.<span class="fn">getElementById</span>(fieldId + <span class="st">'Error'</span>);
+  <span class="cm">// Add red border to the field</span>
+  <span class="kw">if</span> (field) field.classList.<span class="fn">add</span>(<span class="st">'field-error'</span>);
+  <span class="cm">// Make the error message visible with text</span>
+  <span class="kw">if</span> (err)   { err.textContent = message; err.classList.<span class="fn">add</span>(<span class="st">'show'</span>); }
+}
+
+<span class="kw">function</span> <span class="fn">clearError</span>(fieldId) {
+  <span class="kw">const</span> field = document.<span class="fn">getElementById</span>(fieldId);
+  <span class="kw">const</span> err   = document.<span class="fn">getElementById</span>(fieldId + <span class="st">'Error'</span>);
+  <span class="kw">if</span> (field) field.classList.<span class="fn">remove</span>(<span class="st">'field-error'</span>);
+  <span class="kw">if</span> (err)   err.classList.<span class="fn">remove</span>(<span class="st">'show'</span>);
+}
+
+<span class="cm">/* Regex: checks for @ symbol and at least one dot in the domain */</span>
+<span class="kw">function</span> <span class="fn">isValidEmail</span>(email) {
+  <span class="kw">return</span> <span class="vl">/^[^\s@]+@[^\s@]+\.[^\s@]+$/</span>.<span class="fn">test</span>(email);
+}
+
+<span class="cm">/* Phone: digits, spaces, hyphens, plus, parentheses — 7 to 15 chars */</span>
+<span class="kw">function</span> <span class="fn">isValidPhone</span>(phone) {
+  <span class="kw">return</span> <span class="vl">/^[\d\s\-\+\(\)]{7,15}$/</span>.<span class="fn">test</span>(phone);
+}
+
+<span class="cm">/* ── Attach the submit handler ───────────────────────────── */</span>
+
+<span class="kw">const</span> appForm = document.<span class="fn">getElementById</span>(<span class="st">'jobAppForm'</span>);
+
+<span class="cm">/* Clear each field's error as the user types — live feedback */</span>
+[<span class="st">'fullName'</span>, <span class="st">'email'</span>, <span class="st">'phone'</span>, <span class="st">'city'</span>, <span class="st">'position'</span>, <span class="st">'experience'</span>, <span class="st">'portfolio'</span>, <span class="st">'message'</span>].<span class="fn">forEach</span>(<span class="kw">function</span>(id) {
+  <span class="kw">const</span> el = document.<span class="fn">getElementById</span>(id);
+  <span class="kw">if</span> (el) {
+    el.<span class="fn">addEventListener</span>(<span class="st">'input'</span>,  () =&gt; <span class="fn">clearError</span>(id));
+    el.<span class="fn">addEventListener</span>(<span class="st">'change'</span>, () =&gt; <span class="fn">clearError</span>(id));
+  }
+});
+
+appForm.<span class="fn">addEventListener</span>(<span class="st">'submit'</span>, <span class="kw">function</span> (event) {
+
+  <span class="cm">// Stop the browser navigating to the action URL</span>
+  event.<span class="fn">preventDefault</span>();
+
+  <span class="cm">// Read and trim each field value</span>
+  <span class="kw">const</span> fullName   = document.<span class="fn">getElementById</span>(<span class="st">'fullName'</span>).value.<span class="fn">trim</span>();
+  <span class="kw">const</span> email      = document.<span class="fn">getElementById</span>(<span class="st">'email'</span>).value.<span class="fn">trim</span>();
+  <span class="kw">const</span> phone      = document.<span class="fn">getElementById</span>(<span class="st">'phone'</span>).value.<span class="fn">trim</span>();
+  <span class="kw">const</span> city       = document.<span class="fn">getElementById</span>(<span class="st">'city'</span>).value.<span class="fn">trim</span>();
+  <span class="kw">const</span> position   = document.<span class="fn">getElementById</span>(<span class="st">'position'</span>).value;
+  <span class="kw">const</span> experience = document.<span class="fn">getElementById</span>(<span class="st">'experience'</span>).value.<span class="fn">trim</span>();
+  <span class="kw">const</span> message    = document.<span class="fn">getElementById</span>(<span class="st">'message'</span>).value.<span class="fn">trim</span>();
+
+  <span class="kw">const</span> errorAlert   = document.<span class="fn">getElementById</span>(<span class="st">'formErrorAlert'</span>);
+  <span class="kw">const</span> successAlert = document.<span class="fn">getElementById</span>(<span class="st">'formSuccessAlert'</span>);
+
+  <span class="cm">// Reset previous alert visibility</span>
+  errorAlert.classList.<span class="fn">remove</span>(<span class="st">'show'</span>);
+  successAlert.classList.<span class="fn">remove</span>(<span class="st">'show'</span>);
+  [<span class="st">'fullName'</span>, <span class="st">'email'</span>, <span class="st">'phone'</span>, <span class="st">'city'</span>, <span class="st">'position'</span>, <span class="st">'experience'</span>, <span class="st">'portfolio'</span>, <span class="st">'message'</span>].<span class="fn">forEach</span>(clearError);
+
+  <span class="kw">let</span> valid = <span class="kw">true</span>;
+
+  <span class="cm">// Validate each field; accumulate errors rather than stopping early</span>
+  <span class="kw">if</span> (fullName.length &lt; <span class="nm">2</span>) {
+    <span class="fn">showError</span>(<span class="st">'fullName'</span>, <span class="st">'Full name must be at least 2 characters.'</span>);
+    valid = <span class="kw">false</span>;
+  }
+  <span class="kw">if</span> (!<span class="fn">isValidEmail</span>(email)) {
+    <span class="fn">showError</span>(<span class="st">'email'</span>, <span class="st">'Please enter a valid email address.'</span>);
+    valid = <span class="kw">false</span>;
+  }
+  <span class="kw">if</span> (phone &amp;&amp; !<span class="fn">isValidPhone</span>(phone)) {
+    <span class="fn">showError</span>(<span class="st">'phone'</span>, <span class="st">'Please enter a valid phone number.'</span>);
+    valid = <span class="kw">false</span>;
+  }
+  <span class="kw">if</span> (!city) {
+    <span class="fn">showError</span>(<span class="st">'city'</span>, <span class="st">'Please enter your city.'</span>);
+    valid = <span class="kw">false</span>;
+  }
+  <span class="kw">if</span> (!position) {
+    <span class="fn">showError</span>(<span class="st">'position'</span>, <span class="st">'Please select a position.'</span>);
+    valid = <span class="kw">false</span>;
+  }
+  <span class="kw">if</span> (!experience || <span class="fn">isNaN</span>(experience) || Number(experience) &lt; <span class="nm">0</span>) {
+    <span class="fn">showError</span>(<span class="st">'experience'</span>, <span class="st">'Please enter your years of experience.'</span>);
+    valid = <span class="kw">false</span>;
+  }
+  <span class="kw">if</span> (message.length &lt; <span class="nm">20</span>) {
+    <span class="fn">showError</span>(<span class="st">'message'</span>, <span class="st">'Cover note must be at least 20 characters.'</span>);
+    valid = <span class="kw">false</span>;
+  }
+
+  <span class="kw">if</span> (!valid) {
+    <span class="cm">// Show summary error banner and scroll it into view</span>
+    errorAlert.classList.<span class="fn">add</span>(<span class="st">'show'</span>);
+    errorAlert.<span class="fn">scrollIntoView</span>({ behavior: <span class="st">'smooth'</span>, block: <span class="st">'center'</span> });
+    <span class="kw">return</span>;
+  }
+
+  <span class="cm">// All fields valid — show success, reset form</span>
+  successAlert.classList.<span class="fn">add</span>(<span class="st">'show'</span>);
+  appForm.<span class="fn">reset</span>();
+  successAlert.<span class="fn">scrollIntoView</span>({ behavior: <span class="st">'smooth'</span>, block: <span class="st">'center'</span> });
+});</code></pre>
+        </div>
+      </div>
+
+      <p>The live form below runs exactly this script. Submit with empty or invalid fields to observe the validation in
+        action.</p>
+
+      <div class="form-js-demo">
+        <div class="form-js-header">
+          <h3>Job Application Form — Stage 4: JavaScript Validation</h3>
+          <p>TechJobs Nepal — Submit with empty or invalid fields to observe validation. Complete all fields correctly
+            to trigger the success state.</p>
+        </div>
+        <div class="form-js-body">
+          <div class="form-alert error" id="formErrorAlert" role="alert" aria-live="assertive">
+            One or more fields require attention. Please review the errors below.
+          </div>
+          <div class="form-alert success" id="formSuccessAlert" role="alert" aria-live="assertive">
+            Application submitted. The form has been reset.
+          </div>
+
+          <form id="jobAppForm" novalidate>
+            <p style="font-size:0.82rem;color:var(--text-muted);margin-bottom:1rem;"><small>Fields marked * are
+                required.</small></p>
+
+            <!-- Fieldset 1: Personal Information -->
+            <fieldset style="border:none;padding:0;margin:0 0 1.25rem;">
+              <legend
+                style="font-weight:700;font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--navy);padding-bottom:0.5rem;border-bottom:1px solid var(--border);width:100%;margin-bottom:0.9rem;">
+                Personal Information</legend>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="fullName">Full Name *</label>
+                  <input type="text" id="fullName" name="fullName" placeholder="e.g. Aadarsh K.C." required
+                    aria-required="true" aria-describedby="fullNameError" />
+                  <span class="error-msg" id="fullNameError" role="alert"></span>
+                </div>
+                <div class="form-group">
+                  <label for="email">Email Address *</label>
+                  <input type="email" id="email" name="email" placeholder="aadarsh@example.com.np" required
+                    aria-required="true" aria-describedby="emailError" />
+                  <span class="error-msg" id="emailError" role="alert"></span>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="phone">Phone Number <span
+                      style="font-weight:400;color:var(--text-muted);">(optional)</span></label>
+                  <input type="tel" id="phone" name="phone" placeholder="+9779802864772" pattern="[\d\s\-+()]{7,15}"
+                    aria-describedby="phoneError" />
+                  <span class="error-msg" id="phoneError" role="alert"></span>
+                </div>
+                <div class="form-group">
+                  <label for="city">City *</label>
+                  <input type="text" id="city" name="city" placeholder="e.g. Kathmandu" list="js-cityList" required
+                    aria-required="true" aria-describedby="cityError" />
+                  <datalist id="js-cityList">
+                    <option value="Kathmandu">
+                    <option value="Pokhara">
+                    <option value="Lalitpur">
+                    <option value="Nepalgunj">
+                    <option value="Bharatpur">
+                  </datalist>
+                  <span class="error-msg" id="cityError" role="alert"></span>
+                </div>
+              </div>
+            </fieldset>
+
+            <!-- Fieldset 2: Application Details -->
+            <fieldset style="border:none;padding:0;margin:0 0 1.25rem;">
+              <legend
+                style="font-weight:700;font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--navy);padding-bottom:0.5rem;border-bottom:1px solid var(--border);width:100%;margin-bottom:0.9rem;">
+                Application Details</legend>
+
+              <div class="form-group">
+                <label for="position">Position Applied For *</label>
+                <select id="position" name="position" required aria-required="true" aria-describedby="positionError">
+                  <option value="">-- Please select --</option>
+                  <optgroup label="Frontend">
+                    <option value="frontend">Frontend Developer</option>
+                    <option value="ui">UI Engineer</option>
+                  </optgroup>
+                  <optgroup label="Backend">
+                    <option value="backend">Backend Developer</option>
+                    <option value="devops">DevOps Engineer</option>
+                  </optgroup>
+                  <optgroup label="Full Stack">
+                    <option value="fullstack">Full Stack Developer</option>
+                  </optgroup>
+                </select>
+                <span class="error-msg" id="positionError" role="alert"></span>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="experience">Years of Experience *</label>
+                  <input type="number" id="experience" name="experience" min="0" max="30" placeholder="e.g. 2" required
+                    aria-required="true" aria-describedby="experienceError" />
+                  <span class="error-msg" id="experienceError" role="alert"></span>
+                </div>
+                <div class="form-group">
+                  <label for="portfolio">Portfolio URL</label>
+                  <input type="url" id="portfolio" name="portfolio" placeholder="https://github.com/aadarshkc"
+                    aria-describedby="portfolioError" />
+                  <span class="error-msg" id="portfolioError" role="alert"></span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Cover Note * <span
+                    style="font-weight:400;color:var(--text-muted);font-size:0.78rem;">(minimum 20
+                    characters)</span></label>
+                <textarea id="message" name="message" rows="4" minlength="20"
+                  placeholder="Briefly describe your skills and experience..." required aria-required="true"
+                  aria-describedby="messageError"></textarea>
+                <span class="error-msg" id="messageError" role="alert"></span>
+              </div>
+            </fieldset>
+
+            <button type="submit" class="btn btn-primary btn-full">Submit Application</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- 4. INTERACTIVE EXAMPLES -->
+      <div class="tier-divider" style="margin-top:3rem;">
+        <div class="tier-number">4</div>
+        <h2 class="tier-title">Interactive Examples</h2>
+        <div class="tier-divider-line"></div>
+      </div>
+
+      <p>The following examples demonstrate core JavaScript capabilities directly in the browser. Each is
+        self-contained and uses only the techniques discussed in this section.</p>
+
+      <div class="ex-block">
+        <div class="ex-title">Button click — cycling messages via array and modulo</div>
+        <div class="ex-code">
+          <pre><code><span class="kw">const</span> messages = [
+  <span class="st">'JavaScript responds to user events.'</span>,
+  <span class="st">'The DOM is updated without reloading.'</span>,
+  <span class="st">'Arrays store ordered collections of values.'</span>,
+  <span class="st">'The modulo operator cycles through indexes.'</span>
+];
+
+<span class="kw">let</span> index = <span class="nm">0</span>;
+
+document.<span class="fn">getElementById</span>(<span class="st">'cycleBtn'</span>)
+  .<span class="fn">addEventListener</span>(<span class="st">'click'</span>, <span class="kw">function</span> () {
+    document.<span class="fn">getElementById</span>(<span class="st">'cycleOut'</span>).textContent
+      = messages[index % messages.length];
+    index++;
+  });</code></pre>
+        </div>
+        <div class="ex-output">
+          <div class="ex-output-title">Output</div>
+          <div class="ex-output-body">
+            <button class="btn btn-primary" type="button" style="font-size:0.83rem;margin-bottom:0.6rem;" onclick="
+        const msgs = ['JavaScript responds to user events.','The DOM is updated without reloading.','Arrays store ordered collections of values.','The modulo operator cycles through indexes.'];
+        const out = document.getElementById('ae-cycleOut');
+        const n = parseInt(out.dataset.i || 0);
+        out.textContent = msgs[n % msgs.length];
+        out.style.display = 'block';
+        out.dataset.i = n + 1;
+      ">Click to cycle messages</button>
+            <p id="ae-cycleOut" style="display:none;margin:0;font-size:0.9rem;color:var(--navy);font-weight:500;">
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="ex-block">
+        <div class="ex-title">Dynamic text — live character counter with conditional feedback</div>
+        <div class="ex-code">
+          <pre><code><span class="kw">const</span> input   = document.<span class="fn">getElementById</span>(<span class="st">'dynInput'</span>);
+<span class="kw">const</span> preview = document.<span class="fn">getElementById</span>(<span class="st">'dynPreview'</span>);
+<span class="kw">const</span> counter = document.<span class="fn">getElementById</span>(<span class="st">'charCount'</span>);
+<span class="kw">const</span> MAX     = <span class="nm">40</span>;
+
+input.<span class="fn">addEventListener</span>(<span class="st">'input'</span>, <span class="kw">function</span> () {
+  <span class="kw">const</span> len = <span class="kw">this</span>.value.length;
+
+  <span class="cm">// Update live preview</span>
+  preview.textContent = <span class="kw">this</span>.value || <span class="st">'Text will appear here'</span>;
+
+  <span class="cm">// Update counter and change colour when nearing the limit</span>
+  counter.textContent = len + <span class="st">' / '</span> + MAX;
+  counter.style.color = len &gt; MAX * <span class="nm">0.85</span> ? <span class="st">'#c0392b'</span> : <span class="st">'#406093'</span>;
+});</code></pre>
+        </div>
+        <div class="ex-output">
+          <div class="ex-output-title">Output</div>
+          <div class="ex-output-body">
+            <input type="text" maxlength="40" placeholder="Type up to 40 characters..."
+              style="width:100%;padding:0.44rem 0.72rem;border:1.5px solid var(--border);border-radius:5px;font-size:0.85rem;margin-bottom:0.4rem;"
+              oninput="
+        const len = this.value.length;
+        const prev = document.getElementById('ae-dynPrev');
+        const cnt  = document.getElementById('ae-dynCnt');
+        prev.textContent = this.value || 'Text will appear here';
+        cnt.textContent  = len + ' / 40';
+        cnt.style.color  = len > 34 ? '#c0392b' : '#406093';
+      " />
+            <p id="ae-dynPrev" style="margin:0 0 0.3rem;font-size:0.92rem;color:var(--text-main);">Text will
+              appear here</p>
+            <span id="ae-dynCnt" style="font-size:0.77rem;font-family:var(--font-mono);color:var(--navy);">0 /
+              40</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ex-block">
+        <div class="ex-title">Show and hide — toggling DOM visibility with classList</div>
+        <div class="ex-code">
+          <pre><code><span class="kw">const</span> btn     = document.<span class="fn">getElementById</span>(<span class="st">'toggleBtn'</span>);
+<span class="kw">const</span> details = document.<span class="fn">getElementById</span>(<span class="st">'hiddenDetails'</span>);
+
+btn.<span class="fn">addEventListener</span>(<span class="st">'click'</span>, <span class="kw">function</span> () {
+  <span class="kw">const</span> visible = details.style.display !== <span class="st">'none'</span>
+                    && details.style.display !== <span class="st">''</span>;
+
+  details.style.display = visible ? <span class="st">'none'</span> : <span class="st">'block'</span>;
+
+  <span class="cm">// Update button label to reflect current state</span>
+  btn.textContent = visible ? <span class="st">'Show details'</span> : <span class="st">'Hide details'</span>;
+});</code></pre>
+        </div>
+        <div class="ex-output">
+          <div class="ex-output-title">Output</div>
+          <div class="ex-output-body">
+            <button class="btn btn-primary" type="button" style="font-size:0.83rem;margin-bottom:0.65rem;" onclick="
+        const det = document.getElementById('ae-details');
+        const vis = det.style.display !== 'none' && det.style.display !== '';
+        det.style.display = vis ? 'none' : 'block';
+        this.textContent = vis ? 'Show details' : 'Hide details';
+      ">Show details</button>
+            <div id="ae-details"
+              style="display:none;background:var(--navy-pale);border:1px solid var(--border);border-radius:6px;padding:0.85rem 1rem;font-size:0.88rem;">
+              <strong>Aadarsh K.C.</strong><br />
+              BSc (Hons) Information Technology<br />
+              CET138 Full Stack Development
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. CODE EXPLANATION -->
+      <div class="tier-divider" style="margin-top:3rem;">
+        <div class="tier-number">5</div>
+        <h2 class="tier-title">Code Explanation — The Validation Script</h2>
+        <div class="tier-divider-line"></div>
+      </div>
+
+      <p>The table below provides a line-by-line explanation of the key techniques used in
+        <code>script.js</code> to implement client-side validation on the Job Application Form.
+      </p>
+
+      <table class="catalog-table">
+        <thead>
+          <tr>
+            <th>Code</th>
+            <th>Explanation</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>document.addEventListener<br/>('DOMContentLoaded', fn)</code></td>
+            <td>Defers all DOM access until the HTML has been fully parsed. Without this, scripts at the end of
+              <code>&lt;body&gt;</code> could execute before all elements are available.
+            </td>
+          </tr>
+          <tr>
+            <td><code>form.addEventListener<br/>('submit', fn)</code></td>
+            <td>Attaches a callback to the form's submit event. The callback runs whenever the user clicks the
+              submit button or presses Enter inside a field.</td>
+          </tr>
+          <tr>
+            <td><code>event.preventDefault()</code></td>
+            <td>Cancels the browser's default form-submission behaviour, which would navigate to the
+              <code>action</code> URL and reload the page. This hands full control to JavaScript.
+            </td>
+          </tr>
+          <tr>
+            <td><code>input.value.trim()</code></td>
+            <td>Reads the field's current text value. <code>.trim()</code> removes leading and trailing
+              whitespace, preventing a field containing only spaces from passing a length check.</td>
+          </tr>
+          <tr>
+            <td><code>/^[^\s@]+@[^\s@]+\.[^\s@]+$/</code></td>
+            <td>A regular expression pattern that tests whether a string contains one <code>@</code> symbol and
+              at least one dot in the domain segment — a lightweight email format check.</td>
+          </tr>
+          <tr>
+            <td><code>el.classList.add('show')</code></td>
+            <td>Adds the <code>show</code> class to a DOM element. In this portfolio, <code>.show</code> sets
+              <code>display: block</code>, making a hidden error message visible — without modifying the HTML.
+            </td>
+          </tr>
+          <tr>
+            <td><code>el.textContent = msg</code></td>
+            <td>Sets the visible text of an element. Using <code>textContent</code> rather than
+              <code>innerHTML</code> is a security practice — it prevents any injected content from being
+              interpreted as HTML, avoiding cross-site scripting vulnerabilities.
+            </td>
+          </tr>
+          <tr>
+            <td><code>el.scrollIntoView<br/>({ behavior: 'smooth' })</code></td>
+            <td>Scrolls the viewport smoothly to bring the error alert into view. On mobile devices where the
+              form may extend below the fold, this ensures the user sees the error message.</td>
+          </tr>
+          <tr>
+            <td><code>form.reset()</code></td>
+            <td>Restores all form controls to their default state. Called after a successful submission to
+              prepare the form for potential re-use without a page reload.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="tip-box" style="margin-top:1.5rem;">
+        Client-side validation as implemented here improves the user experience by providing immediate feedback,
+        but it is not a security measure. Any data submitted from a browser can be intercepted and modified.
+        Production applications must always re-validate inputs on the server before processing or persisting
+        them.
+      </div>
+
+      <!-- Portfolio complete -->
+      <div
+        style="background:linear-gradient(135deg,var(--navy-dark),var(--navy));color:#fff;padding:2.5rem 2rem;border-radius:var(--radius-lg);text-align:center;margin-top:2.5rem;">
+        <h2 style="color:#fff;font-size:1.55rem;margin-bottom:0.65rem;">Portfolio Complete</h2>
+        <p style="color:rgba(255,255,255,0.78);max-width:480px;margin:0 auto 1.5rem;font-size:0.92rem;">The five
+          sections of this portfolio trace the Job Application Form from a raw HTML skeleton through CSS
+          styling, Bootstrap layout, and finally JavaScript validation — demonstrating progressive competency
+          across the full frontend stack.</p>
+        <div style="display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap;">
+          <a href="index.html" class="btn btn-outline" style="border-color:rgba(255,255,255,0.4);color:#fff;">Return to
+            Home</a>
+          <a href="fullstack.html" class="btn btn-primary"
+            style="background:rgba(255,255,255,0.16);border-color:rgba(255,255,255,0.28);">Restart from Full
+            Stack</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h5>Sitemap</h5><a href="index.html">Home</a><a href="fullstack.html">Full Stack</a><a
+          href="html.html">HTML</a><a href="css.html">CSS</a><a href="bootstrap.html">Bootstrap</a><a
+          href="javascript.html">JavaScript</a>
+      </div>
+      <div class="footer-col">
+        <h5>Student</h5>
+        <p><strong>Aadarsh K.C.</strong></p>
+        <p>Canvas ID: bj02zu</p>
+        <p>Reg No: 240832810</p>
+        <p>BSc (Hons) Information Technology</p>
+      </div>
+      <div class="footer-col">
+        <h5>Assignment</h5>
+        <p><strong>CET138 Full Stack Development</strong></p>
+        <p>Individual ePortfolio Assessment</p>
+        <p>Academic Year 2025–26 · Semester 3</p>
+        <p style="margin-top:0.5rem;font-size:0.76rem;color:rgba(255,255,255,0.32);">&copy; 2026 Aadarsh K.C. All rights
+          reserved.</p>
+      </div>
+    </div>
+    <div class="footer-bottom"><span>Built with HTML, CSS, Bootstrap 5 and Vanilla JavaScript</span><span>CET138
+        ePortfolio — Aadarsh K.C.</span></div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

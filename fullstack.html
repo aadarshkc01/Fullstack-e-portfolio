@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Full Stack Development — frontend, backend, database, and architecture." />
+  <title>Full Stack | ePortfolio — Aadarsh K.C.</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <header class="site-header page-header">
+    <a class="header-brand" href="index.html">Aadarsh K.C.<span>CET138 Full Stack Development</span></a>
+    <button class="nav-toggle" aria-label="Toggle navigation"
+      aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="fullstack.html" class="active">Full Stack</a>
+      <a href="html.html">HTML</a>
+      <a href="css.html">CSS</a>
+      <a href="bootstrap.html">Bootstrap</a>
+      <a href="javascript.html">JavaScript</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-banner">
+      <div class="container">
+        <div
+          style="display:inline-block;background:rgba(255,255,255,0.13);border:1px solid rgba(255,255,255,0.26);color:#fff;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;padding:0.24rem 0.78rem;border-radius:100px;margin-bottom:0.85rem;">
+          Section 1 of 5</div>
+        <h1>Full Stack Development</h1>
+        <p>An overview of the complete web development stack and the role of each layer.</p>
+      </div>
+    </section>
+
+    <div class="container" style="padding-top:3rem;padding-bottom:4rem;">
+
+      <!-- 1. DEFINITION -->
+      <div class="tier-divider">
+        <div class="tier-number">1</div>
+        <h2 class="tier-title">What is Full Stack Development?</h2>
+        <div class="tier-divider-line"></div>
+      </div>
+
+      <div>
+        <div style="text-align:center;margin-bottom:1rem;">
+          <img src="./images/fullstack-development.png" alt="fullstack development image"
+            style="width: 40rem; height: auto; margin: 0 auto;">
+          <i>Image source: <a
+              href="https://assets.website-files.com/6344c9cef89d6f2270a38908/638619c83623f65e588332de_b1.webp"
+              target="_blank">website files</a></i>
+        </div> <br>
+      </div>
+
+      <p>Full Stack Development is the practice of designing and building both the client-facing interface of a web
+        application and the server-side systems that power it. A developer working across both layers is referred to as
+        a full stack developer.</p>
+
+      <div class="info-box">
+        <h4>The term "stack"</h4>
+        <p style="margin:0;">The word <em>stack</em> describes the ordered collection of technologies that together form
+          a complete, functioning system. Each layer depends on the one beneath it: the presentation layer communicates
+          with the logic layer, which in turn reads and writes to the data layer. This layered architecture underpins
+          virtually every web application in production today.</p>
+      </div>
+
+      <p>The practical significance of full stack competency is that a single developer can reason about and modify any
+        part of a system independently — from a button in the browser to a database schema on the server. This reduces
+        communication overhead between teams and shortens the time taken to ship features.</p>
+
+      <table class="catalog-table" style="margin-top:1.5rem;">
+        <thead>
+          <tr>
+            <th>Responsibility</th>
+            <th>Examples</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Design and build the user interface</td>
+            <td>HTML structure, CSS layout, JavaScript interactions</td>
+          </tr>
+          <tr>
+            <td>Implement server-side application logic</td>
+            <td>REST APIs, authentication, business rules</td>
+          </tr>
+          <tr>
+            <td>Manage and query data storage</td>
+            <td>SQL queries, database schema design</td>
+          </tr>
+          <tr>
+            <td>Deploy and maintain the application</td>
+            <td>Version control, hosting, CI/CD pipelines</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- 2. FRONTEND -->
+      <div class="tier-divider" style="margin-top:3rem;">
+        <div class="tier-number">2</div>
+        <h2 class="tier-title">Frontend Development</h2>
+        <div class="tier-divider-line"></div>
+      </div>
+
+      <div>
+        <div style="text-align:center;margin-bottom:1rem;">
+          <img src="./images/frontend-development.png" alt="frontend development image"
+            style="width: 40rem; height: auto; margin: 0 auto;">
+          <i>Image source: <a href="https://www.csschopper.com/blog/list-top-front-end-frameworks-trend/"
+              target="_blank">css hopper</a></i>
+        </div> <br>
+      </div>
+
+      <p>The frontend is the portion of a web application that runs in the user's browser. It is responsible for
+        everything the user sees and interacts with directly — layout, typography, colour, animations, and responses to
+        user actions such as clicks and form submissions.</p>
+
+      <p>The three core technologies of the frontend form a clear division of responsibility:</p>
+
+      <table class="catalog-table">
+        <thead>
+          <tr>
+            <th>Technology</th>
+            <th>Responsibility</th>
+            <th>Example task</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>HTML</td>
+            <td>Document structure and semantic meaning</td>
+            <td>Marking up a form with labels, inputs, and a submit button</td>
+          </tr>
+          <tr>
+            <td>CSS</td>
+            <td>Visual presentation and layout</td>
+            <td>Applying colour, spacing, and Flexbox grid to the form</td>
+          </tr>
+          <tr>
+            <td>JavaScript</td>
+            <td>Dynamic behaviour and user interaction</td>
+            <td>Validating field inputs before submission without a page reload</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p style="margin-top:1.25rem;">Large-scale applications typically use a JavaScript <em>framework</em> to organise
+        the frontend into reusable, maintainable components.</p>
+
+      <table class="catalog-table">
+        <thead>
+          <tr>
+            <th>Framework</th>
+            <th>Origin</th>
+            <th>Characteristic approach</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>React</td>
+            <td>Meta (2013)</td>
+            <td>A component library centred on a virtual DOM. UI is expressed as a tree of isolated, reusable
+              components. State changes trigger efficient, targeted re-renders rather than full page refreshes.</td>
+          </tr>
+          <tr>
+            <td>Angular</td>
+            <td>Google (2016)</td>
+            <td>A full framework including routing, form handling, HTTP client, and dependency injection. Suited to
+              large enterprise codebases where a consistent, opinionated structure is required.</td>
+          </tr>
+          <tr>
+            <td>Vue.js</td>
+            <td>Evan You (2014)</td>
+            <td>A progressive framework designed to be incrementally adoptable. Its single-file component format
+              co-locates template, script, and styles, which many developers find intuitive.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="ex-block" style="margin-top:1.5rem;">
+        <div class="ex-title">frontend-example.html — HTML, CSS, and JavaScript working together</div>
+        <div class="ex-code">
+          <pre><code><span class="cm">&lt;!-- HTML defines the elements --&gt;</span>
+<span class="tg">&lt;button</span> <span class="at">id</span>=<span class="st">"greetBtn"</span> <span class="at">type</span>=<span class="st">"button"</span><span class="tg">&gt;</span>Show greeting<span class="tg">&lt;/button&gt;</span>
+<span class="tg">&lt;p</span> <span class="at">id</span>=<span class="st">"output"</span><span class="tg">&gt;&lt;/p&gt;</span>
+
+<span class="cm">/* CSS controls visual appearance */</span>
+<span class="sl">#greetBtn</span> {
+  <span class="pr">background</span>: <span class="vl">#406093</span>;
+  <span class="pr">color</span>: <span class="vl">white</span>;
+  <span class="pr">padding</span>: <span class="nm">0.5rem 1.2rem</span>;
+  <span class="pr">border</span>: <span class="vl">none</span>;
+  <span class="pr">border-radius</span>: <span class="nm">4px</span>;
+  <span class="pr">cursor</span>: <span class="vl">pointer</span>;
+}
+
+<span class="cm">// JavaScript adds interactivity — no page reload</span>
+document.<span class="fn">getElementById</span>(<span class="st">'greetBtn'</span>)
+  .<span class="fn">addEventListener</span>(<span class="st">'click'</span>, <span class="kw">function</span> () {
+    document.<span class="fn">getElementById</span>(<span class="st">'output'</span>).textContent
+      = <span class="st">'Hello from the frontend layer.'</span>;
+  });</code></pre>
+        </div>
+        <div class="ex-output">
+          <div class="ex-output-title">Output</div>
+          <div class="ex-output-body">
+            <button id="greetBtn"
+              onclick="document.getElementById('greetOut').textContent='Hello from the frontend layer.';"
+              style="background:#406093;color:#fff;padding:0.42rem 1.1rem;border:none;border-radius:4px;cursor:pointer;font-size:0.88rem;font-family:inherit;">Show
+              greeting</button>
+            <p id="greetOut" style="margin:0.65rem 0 0;font-size:0.92rem;color:#1a2535;min-height:1.4em;"></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. BACKEND -->
+      <div class="tier-divider" style="margin-top:3rem;">
+        <div class="tier-number">3</div>
+        <h2 class="tier-title">Backend Development</h2>
+        <div class="tier-divider-line"></div>
+      </div>
+
+      <div>
+        <div style="text-align:center;margin-bottom:1rem;">
+          <img src="./images/backend-development.png" alt="backend development image"
+            style="width: 40rem; height: auto; margin: 0 auto;">
+          <i>Image source: <a href="https://aloa.co/blog/back-end-developer" target="_blank">alao</a></i>
+        </div> <br>
+      </div>
+
+      <p>The backend runs on a server and is not directly visible to the user. It receives requests from the frontend,
+        applies business logic — such as authenticating a user, calculating a result, or constructing a database query
+        — and returns a response. Separating this logic from the client prevents sensitive operations and data from
+        being exposed in the browser.</p>
+
+      <table class="catalog-table">
+        <thead>
+          <tr>
+            <th>Technology</th>
+            <th>Language</th>
+            <th>Notable characteristics</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Node.js with Express</td>
+            <td>JavaScript</td>
+            <td>Runs JavaScript on the server using Chrome's V8 engine. Non-blocking I/O makes it efficient for
+              applications handling many concurrent connections. Express is a minimal routing framework built on top
+              of Node.js.</td>
+          </tr>
+          <tr>
+            <td>Django</td>
+            <td>Python</td>
+            <td>Follows a "batteries included" philosophy — ships with an ORM, admin interface, authentication system,
+              and form handling. Reduces boilerplate significantly for data-driven applications.</td>
+          </tr>
+          <tr>
+            <td>Laravel</td>
+            <td>PHP</td>
+            <td>Elegant syntax, built-in routing, and an expressive ORM called Eloquent. Widely used in traditional
+              server-rendered applications and REST APIs alike.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="ex-block" style="margin-top:1.5rem;">
+        <div class="ex-title">server.js — Node.js and Express: two route definitions</div>
+        <div class="ex-code">
+          <pre><code><span class="kw">const</span> express = <span class="fn">require</span>(<span class="st">'express'</span>);
+<span class="kw">const</span> app     = <span class="fn">express</span>();
+app.<span class="fn">use</span>(express.<span class="fn">json</span>()); <span class="cm">// parse incoming JSON bodies</span>
+
+<span class="cm">// GET /api/status — returns a simple health-check response</span>
+app.<span class="fn">get</span>(<span class="st">'/api/status'</span>, (req, res) =&gt; {
+  res.<span class="fn">json</span>({ status: <span class="st">'running'</span>, version: <span class="st">'1.0'</span> });
+});
+
+<span class="cm">// POST /api/apply — receives a job application from the frontend</span>
+app.<span class="fn">post</span>(<span class="st">'/api/apply'</span>, (req, res) =&gt; {
+  <span class="kw">const</span> { name, email, position } = req.body; <span class="cm">// destructure fields</span>
+
+  <span class="cm">// 1. Validate input  2. Save to database  3. Send confirmation</span>
+  res.<span class="fn">status</span>(<span class="nm">201</span>).<span class="fn">json</span>({ success: <span class="kw">true</span>, applicant: name });
+});
+
+app.<span class="fn">listen</span>(<span class="nm">3000</span>);</code></pre>
+        </div>
+      </div>
+
+      <div class="tip-box">The <strong>201 Created</strong> status code in the response is an HTTP convention
+        indicating that a new resource was successfully created as a result of the request. Using semantically correct
+        status codes is considered best practice in REST API design.</div>
+
+      <!-- 4. DATABASE -->
+      <div class="tier-divider" style="margin-top:3rem;">
+        <div class="tier-number">4</div>
+        <h2 class="tier-title">Database Layer</h2>
+        <div class="tier-divider-line"></div>
+      </div>
+
+      <div>
+        <div style="text-align:center;margin-bottom:1rem;">
+          <img src="./images/database-image.png" alt="database image"
+            style="width: 40rem; height: auto; margin: 0 auto;">
+          <i>Image source: <a
+              href="https://www.simplilearn.com/tutorials/programming-tutorial/what-is-backend-development"
+              target="_blank">simple learn</a></i>
+        </div> <br>
+      </div>
+
+      <p>A database provides persistent storage — data is preserved across server restarts, user sessions, and
+        application deployments. The backend is the only layer that communicates directly with the database; the
+        frontend never queries it directly. This boundary is a security requirement, not merely a convention.</p>
+
+      <p>Databases are broadly categorised into two models: <strong>relational (SQL)</strong> and
+        <strong>non-relational (NoSQL)</strong>. The choice between them depends on the structure and access patterns
+        of the data.
+      </p>
+
+      <table class="catalog-table">
+        <thead>
+          <tr>
+            <th>Database</th>
+            <th>Model</th>
+            <th>Data format</th>
+            <th>Well suited for</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>MySQL</td>
+            <td>Relational</td>
+            <td>Tables with rows and columns</td>
+            <td>E-commerce, banking, HR — structured data with defined relationships</td>
+          </tr>
+          <tr>
+            <td>PostgreSQL</td>
+            <td>Relational</td>
+            <td>Tables; supports JSON columns</td>
+            <td>Complex queries, financial records, reporting systems</td>
+          </tr>
+          <tr>
+            <td>MongoDB</td>
+            <td>Document (NoSQL)</td>
+            <td>JSON-like documents</td>
+            <td>Content management, real-time feeds, variable-schema data</td>
+          </tr>
+          <tr>
+            <td>Redis</td>
+            <td>Key-value (NoSQL)</td>
+            <td>In-memory key-value pairs</td>
+            <td>Session storage, caching, rate-limiting — speed is critical</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="ex-block" style="margin-top:1.5rem;">
+        <div class="ex-title">schema.sql — creating and populating a MySQL table</div>
+        <div class="ex-code">
+          <pre><code><span class="cm">-- Define the structure of the applications table</span>
+<span class="kw">CREATE TABLE</span> applications (
+  id         <span class="kw">INT</span>          <span class="vl">AUTO_INCREMENT PRIMARY KEY</span>,
+  full_name  <span class="kw">VARCHAR</span>(<span class="nm">100</span>) <span class="vl">NOT NULL</span>,
+  email      <span class="kw">VARCHAR</span>(<span class="nm">150</span>) <span class="vl">NOT NULL UNIQUE</span>,
+  position   <span class="kw">VARCHAR</span>(<span class="nm">80</span>),
+  applied_at <span class="kw">TIMESTAMP</span>    <span class="kw">DEFAULT</span> <span class="fn">CURRENT_TIMESTAMP</span>
+);
+
+<span class="cm">-- Insert one record</span>
+<span class="kw">INSERT INTO</span> applications (full_name, email, position)
+<span class="kw">VALUES</span> (<span class="st">'Aadarsh K.C.'</span>, <span class="st">'aadarsh@example.com'</span>, <span class="st">'Full Stack Developer'</span>);
+
+<span class="cm">-- Retrieve all records, most recent first</span>
+<span class="kw">SELECT</span> id, full_name, position, applied_at
+<span class="kw">FROM</span>   applications
+<span class="kw">ORDER BY</span> applied_at <span class="kw">DESC</span>;</code></pre>
+        </div>
+      </div>
+
+      <!-- 5. ARCHITECTURE DIAGRAM -->
+      <div class="tier-divider" style="margin-top:3rem;">
+        <div class="tier-number">5</div>
+        <h2 class="tier-title">Full Stack Architecture Diagram</h2>
+        <div class="tier-divider-line"></div>
+      </div>
+
+      <p>The diagram below represents the three-tier architecture and the direction of communication between each
+        layer when a user submits the job application form built across this portfolio.</p>
+
+      <div
+        style="background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2.5rem 2rem;margin:1.5rem 0;">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:0;">
+
+          <!-- Browser -->
+          <div style="text-align:center;margin-bottom:0.5rem;">
+            <div
+              style="font-size:0.78rem;font-weight:600;color:var(--text-muted);letter-spacing:0.04em;text-transform:uppercase;margin-bottom:0.35rem;">
+              Browser</div>
+            <div style="font-size:0.82rem;color:var(--text-muted);">User fills in the form and clicks Submit</div>
+          </div>
+
+          <div style="width:1px;height:28px;background:var(--border);"></div>
+          <div
+            style="font-size:0.7rem;font-family:var(--font-mono);color:var(--text-muted);background:var(--navy-pale);border:1px solid var(--border);padding:0.1rem 0.65rem;border-radius:100px;margin:2px 0;">
+            HTTP POST /api/apply</div>
+          <div style="width:1px;height:28px;background:var(--border);"></div>
+
+          <!-- Frontend -->
+          <div
+            style="background:var(--navy);color:#fff;border-radius:var(--radius-lg);padding:1.15rem 2.5rem;min-width:240px;text-align:center;">
+            <div
+              style="font-family:var(--font-display);font-size:0.95rem;font-weight:700;letter-spacing:0.02em;margin-bottom:0.3rem;">
+              Presentation Layer</div>
+            <div style="font-size:0.76rem;opacity:0.78;">HTML · CSS · JavaScript</div>
+          </div>
+
+          <div style="width:1px;height:28px;background:var(--border);"></div>
+          <div
+            style="font-size:0.7rem;font-family:var(--font-mono);color:var(--text-muted);background:var(--navy-pale);border:1px solid var(--border);padding:0.1rem 0.65rem;border-radius:100px;margin:2px 0;">
+            JSON request body</div>
+          <div style="width:1px;height:28px;background:var(--border);"></div>
+
+          <!-- Backend -->
+          <div
+            style="background:var(--navy-dark);color:#fff;border-radius:var(--radius-lg);padding:1.15rem 2.5rem;min-width:240px;text-align:center;">
+            <div
+              style="font-family:var(--font-display);font-size:0.95rem;font-weight:700;letter-spacing:0.02em;margin-bottom:0.3rem;">
+              Logic Layer</div>
+            <div style="font-size:0.76rem;opacity:0.78;">Node.js · Express · Authentication</div>
+          </div>
+
+          <div style="width:1px;height:28px;background:var(--border);"></div>
+          <div
+            style="font-size:0.7rem;font-family:var(--font-mono);color:var(--text-muted);background:var(--navy-pale);border:1px solid var(--border);padding:0.1rem 0.65rem;border-radius:100px;margin:2px 0;">
+            INSERT INTO applications …</div>
+          <div style="width:1px;height:28px;background:var(--border);"></div>
+
+          <!-- Database -->
+          <div
+            style="background:#1a2535;color:#fff;border-radius:var(--radius-lg);padding:1.15rem 2.5rem;min-width:240px;text-align:center;">
+            <div
+              style="font-family:var(--font-display);font-size:0.95rem;font-weight:700;letter-spacing:0.02em;margin-bottom:0.3rem;">
+              Data Layer</div>
+            <div style="font-size:0.76rem;opacity:0.78;">MySQL · MongoDB · PostgreSQL</div>
+          </div>
+        </div>
+
+        <!-- Request lifecycle table -->
+        <div style="margin-top:2rem;border-top:1px solid var(--border);padding-top:1.5rem;">
+          <p
+            style="font-size:0.78rem;font-weight:600;color:var(--navy);margin-bottom:0.75rem;text-transform:uppercase;letter-spacing:0.06em;font-family:var(--font-mono);">
+            Request lifecycle when the form is submitted</p>
+          <table class="catalog-table" style="margin:0;">
+            <thead>
+              <tr>
+                <th>Step</th>
+                <th>Layer</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Frontend</td>
+                <td>JavaScript intercepts the submit event and calls <code>event.preventDefault()</code>, preventing a
+                  page reload.</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Frontend</td>
+                <td>Validated field values are serialised into JSON and sent via <code>fetch()</code> as an HTTP POST
+                  request.</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Backend</td>
+                <td>The Express route handler receives the request, validates and sanitises the data, then constructs
+                  a database query.</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Database</td>
+                <td>The record is inserted; the database returns the new row's ID to the backend.</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>Backend</td>
+                <td>A JSON response — <code>{ "success": true }</code> — is sent back to the frontend with HTTP status
+                  201.</td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>Frontend</td>
+                <td>JavaScript reads the response and updates the DOM to display a success message, with no page
+                  navigation.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div
+        style="background:var(--navy-pale);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem 1.85rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;margin-top:2rem;">
+        <div>
+          <p style="margin:0;font-weight:600;color:var(--navy);">Next: HTML</p>
+          <p style="margin:0;font-size:0.87rem;color:var(--text-muted);">Document structure, core tags with output
+            demonstrations, and the form skeleton.</p>
+        </div>
+        <a href="html.html" class="btn btn-primary">HTML Section</a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h5>Sitemap</h5><a href="index.html">Home</a><a href="fullstack.html">Full Stack</a><a
+          href="html.html">HTML</a><a href="css.html">CSS</a><a href="bootstrap.html">Bootstrap</a><a
+          href="javascript.html">JavaScript</a>
+      </div>
+      <div class="footer-col">
+        <h5>Student</h5>
+        <p><strong>Aadarsh K.C.</strong></p>
+        <p>Canvas ID: bj02zu</p>
+        <p>Reg No: 240832810</p>
+        <p>BSc (Hons) Information Technology</p>
+      </div>
+      <div class="footer-col">
+        <h5>Assignment</h5>
+        <p><strong>CET138 Full Stack Development</strong></p>
+        <p>Individual ePortfolio Assessment</p>
+        <p>Academic Year 2025–26 · Semester 3</p>
+        <p style="margin-top:0.5rem;font-size:0.76rem;color:rgba(255,255,255,0.32);">&copy; 2026 Aadarsh K.C. All rights
+          reserved.</p>
+      </div>
+    </div>
+    <div class="footer-bottom"><span>Built with HTML, CSS, Bootstrap 5 and Vanilla JavaScript</span><span>CET138
+        ePortfolio — Aadarsh K.C.</span></div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

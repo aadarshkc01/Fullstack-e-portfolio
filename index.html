@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ePortfolio of Aadarsh K.C. — CET138 Full Stack Development." />
+  <title>Home | ePortfolio — Aadarsh K.C.</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <header class="site-header page-header">
+    <a class="header-brand" href="index.html">Aadarsh K.C.<span>CET138 Full Stack Development</span></a>
+    <button class="nav-toggle" aria-label="Toggle navigation"
+      aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="index.html" class="active">Home</a>
+      <a href="fullstack.html">Full Stack</a>
+      <a href="html.html">HTML</a>
+      <a href="css.html">CSS</a>
+      <a href="bootstrap.html">Bootstrap</a>
+      <a href="javascript.html">JavaScript</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="hero-content container">
+        <div
+          style="display:inline-block;background:rgba(255,255,255,0.14);border:1px solid rgba(255,255,255,0.28);color:#fff;font-size:0.73rem;letter-spacing:0.1em;text-transform:uppercase;padding:0.28rem 0.85rem;border-radius:100px;margin-bottom:1.25rem;">
+          Academic Year 2025–26</div>
+        <h1>Full Stack Development<br>ePortfolio</h1>
+        <p style="margin-top:0.85rem;">A structured portfolio demonstrating competency in HTML, CSS, Bootstrap 5, and
+          JavaScript — submitted for the CET138 module assessment at undergraduate level.</p>
+        <div style="margin-top:2rem;display:flex;gap:0.75rem;flex-wrap:wrap;">
+          <a href="fullstack.html" class="btn btn-primary">Begin Portfolio</a>
+          <a href="#modules" class="btn btn-outline" style="border-color:rgba(255,255,255,0.4);color:#fff;">View
+            Sections</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Student profile -->
+    <div class="container" style="padding-top:3.5rem;padding-bottom:1.5rem;">
+      <span class="section-label">Student Profile</span>
+      <h2 class="section-title">About This Portfolio</h2>
+
+      <div
+        style="display:grid;grid-template-columns:auto 1fr;gap:2rem;align-items:center;background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem;box-shadow:var(--shadow-sm);">
+        <div
+          style="width:80px;height:80px;background:var(--navy);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:1.8rem;color:#fff;flex-shrink:0;">
+          AK</div>
+        <div>
+          <dl style="display:grid;grid-template-columns:auto 1fr;gap:0.28rem 1.2rem;font-size:0.88rem;">
+            <dt style="font-weight:600;color:var(--navy);">Full Name</dt>
+            <dd style="color:var(--text-muted);">Aadarsh K.C.</dd>
+            <dt style="font-weight:600;color:var(--navy);">Canvas ID</dt>
+            <dd style="color:var(--text-muted);">bj02zu</dd>
+            <dt style="font-weight:600;color:var(--navy);">Registration</dt>
+            <dd style="color:var(--text-muted);">240832810</dd>
+            <dt style="font-weight:600;color:var(--navy);">Module</dt>
+            <dd style="color:var(--text-muted);">CET138 — Full Stack Development</dd>
+            <dt style="font-weight:600;color:var(--navy);">Programme</dt>
+            <dd style="color:var(--text-muted);">BSc (Hons) Information Technology</dd>
+            <dt style="font-weight:600;color:var(--navy);">Academic Year</dt>
+            <dd style="color:var(--text-muted);">2025–2026 Semester 3</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+
+    <!-- Assignment brief
+  <div class="container" style="padding-bottom:1.5rem;">
+    <div class="info-box">
+      <h4>Assignment Brief</h4>
+      <p>This ePortfolio constitutes the summative assessment for CET138 Full Stack Development. Each section covers a core technology at progressively advanced levels, from definition and syntax through to working implementations. The portfolio is tied together by a single running project — a Job Application Form — that evolves across all five sections from a plain HTML skeleton to a fully validated, dynamic application.</p>
+      <p style="margin:0;">The target grade band is <strong>Excellent (16–20)</strong>, achieved through comprehensive coverage, well-structured code with meaningful comments, a progressive project narrative, and responsive design across all device sizes.</p>
+    </div>
+  </div> -->
+
+    <!-- Module cards -->
+    <div class="container" style="padding-bottom:4rem;" id="modules">
+      <span class="section-label">Portfolio Sections</span>
+      <h2 class="section-title">Five Technology Areas</h2>
+      <div class="card-grid">
+        <article class="card">
+          <h3>Full Stack</h3>
+          <p>Architecture, the 3-tier model, frontend, backend, and database responsibilities.</p>
+          <a href="fullstack.html" class="card-link">Open section</a>
+        </article>
+        <article class="card">
+          <h3>HTML</h3>
+          <p>Document structure, semantic tags, forms, and raw browser output demonstrations.</p>
+          <a href="html.html" class="card-link">Open section</a>
+        </article>
+        <article class="card">
+          <h3>CSS</h3>
+          <p>Cascade, selectors, Box Model, Flexbox, and responsive layout with media queries.</p>
+          <a href="css.html" class="card-link">Open section</a>
+        </article>
+        <article class="card">
+          <h3>Bootstrap</h3>
+          <p>Framework setup, the 12-column grid system, and pre-built UI components.</p>
+          <a href="bootstrap.html" class="card-link">Open section</a>
+        </article>
+        <article class="card">
+          <h3>JavaScript</h3>
+          <p>Variables, functions, DOM manipulation, events, and client-side form validation.</p>
+          <a href="javascript.html" class="card-link">Open section</a>
+        </article>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h5>Sitemap</h5><a href="index.html">Home</a><a href="fullstack.html">Full Stack</a><a
+          href="html.html">HTML</a><a href="css.html">CSS</a><a href="bootstrap.html">Bootstrap</a><a
+          href="javascript.html">JavaScript</a>
+      </div>
+      <div class="footer-col">
+        <h5>Student</h5>
+        <p><strong>Aadarsh K.C.</strong></p>
+        <p>Canvas ID: bj02zu</p>
+        <p>Reg No: 240832810</p>
+        <p>BSc (Hons) Information Technology</p>
+      </div>
+      <div class="footer-col">
+        <h5>Assignment</h5>
+        <p><strong>CET138 Full Stack Development</strong></p>
+        <p>Individual ePortfolio Assessment</p>
+        <p>Academic Year 2025–26 · Semester 3</p>
+        <p style="margin-top:0.5rem;font-size:0.76rem;color:rgba(255,255,255,0.32);">&copy; 2026 Aadarsh K.C. All rights
+          reserved.</p>
+      </div>
+    </div>
+    <div class="footer-bottom"><span>Built with HTML, CSS, Bootstrap 5 and Vanilla JavaScript</span><span>CET138
+        ePortfolio — Aadarsh K.C.</span></div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
